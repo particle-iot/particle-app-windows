@@ -1,0 +1,8 @@
+﻿<UI:VisibleBoundsWindow xmlns:UI="using:Particle.UI" xmlns:Xaml="using:Windows.UI.Xaml">
+    <UI:VisibleBoundsWindow.NavigationBarHeight>
+		<Xaml:GridLength/>
+	</UI:VisibleBoundsWindow.NavigationBarHeight>
+    <UI:VisibleBoundsWindow.StatusBarHeight>
+		<Xaml:GridLength/>
+	</UI:VisibleBoundsWindow.StatusBarHeight>
+</UI:VisibleBoundsWindow>

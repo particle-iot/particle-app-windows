@@ -1,0 +1,161 @@
+﻿<ui:GenericPage
+    x:Class="Particle.Tinker.Pages.DevicesPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:ui="using:Particle.UI"
+    xmlns:local="using:Particle.Tinker.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="using:Particle.UI.Controls"
+    xmlns:converters="using:Particle.Tinker.Converters"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Dictionaries/FlyoutDictionary.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <converters:NameToNameConverter x:Key="NameToNameConverter" />
+            <converters:ProductIdToImageConverter x:Key="ProductIdToImageConverter" />
+            <converters:StateToColorOrStringConverter x:Key="StateToColorOrStringConverter" />
+            <converters:StringToUppercaseConverter x:Key="StringToUppercaseConverter" />
+
+            <ControlTemplate x:Key="MenuButton" TargetType="Button">
+                <Border Padding="10,30" Background="Transparent" VerticalAlignment="Center">
+                    <StackPanel>
+                        <Ellipse Width="7" Height="7" Margin="1.5" Fill="{StaticResource Cyan}" />
+                        <Ellipse Width="7" Height="7" Margin="1.5" Fill="{StaticResource Cyan}" />
+                        <Ellipse Width="7" Height="7" Margin="1.5" Fill="{StaticResource Cyan}" />
+                    </StackPanel>
+                </Border>
+            </ControlTemplate>
+
+            <MenuFlyout x:Key="DeviceFlyout">
+                <MenuFlyoutItem x:Uid="Rename" Click="AskRenameDeviceButton_Click" />
+                <MenuFlyoutItem x:Uid="Info" Click="DeviceInfoButton_Click" />
+                <MenuFlyoutItem x:Uid="Events" Click="EventsButton_Click" />
+                <MenuFlyoutItem x:Uid="ReFlashTinker" Click="AskReFlashTinkerButton_Click" />
+                <MenuFlyoutItem x:Uid="Unclaim" Click="AskUnclaimDeviceButton_Click" />
+            </MenuFlyout>
+
+            <Flyout x:Name="DeviceOfflineFlyout">
+                <StackPanel Margin="20,11,20,20">
+                    <TextBlock x:Uid="DeviceOffline" Style="{StaticResource MessageDialogHeaderStyle}" />
+                    <TextBlock x:Uid="DeviceOfflineText" Margin="0,20" Style="{StaticResource MessageDialogTextStyle}" TextWrapping="Wrap" />
+                    <Grid Margin="0,10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width=".43*" />
+                            <ColumnDefinition Width=".04*" />
+                            <ColumnDefinition Width=".43*" />
+                        </Grid.ColumnDefinitions>
+                        <Button x:Uid="DialogButtonOk" Grid.Column="0" HorizontalAlignment="Stretch" Click="DeviceOfflineOkButton_Click" />
+                    </Grid>
+                </StackPanel>
+            </Flyout>
+
+            <Flyout x:Name="DeviecNotTinketFlyout">
+                <StackPanel Margin="20,11,20,20">
+                    <TextBlock x:Uid="NotRunningTinker" Style="{StaticResource MessageDialogHeaderStyle}" />
+                    <TextBlock x:Uid="NotRunningTinkerText" Margin="0,20" Style="{StaticResource MessageDialogTextStyle}" TextWrapping="Wrap" />
+                    <Grid Margin="0,10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width=".43*" />
+                            <ColumnDefinition Width=".04*" />
+                            <ColumnDefinition Width=".43*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Button x:Name="DeviceNotTinkerReFlashButton" x:Uid="DialogButtonReFlashTinker" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Stretch" Click="AskReFlashTinkerButton_Click" />
+                        <Button x:Uid="DialogButtonCancel" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Stretch" Click="DeviceNotTinkerCancelButton_Click" />
+                        <Button x:Name="DeviceNotTinkerTinkerButton" x:Uid="DialogButtonTinkerAnyway" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Stretch" Click="DeviceNotTinkerTinkerButton_Click" />
+                    </Grid>
+                </StackPanel>
+            </Flyout>
+
+            <MenuFlyout x:Name="AddFlyout">
+                <MenuFlyoutItem x:Uid="Photon" Click="AddPhotonButton_Click" />
+                <MenuFlyoutItem x:Uid="Electron" Click="AddElectronButton_Click" />
+            </MenuFlyout>
+        </ResourceDictionary>
+    </Page.Resources>
+
+    <Page.BottomAppBar>
+        <CommandBar x:Name="DevicesCommandBar" ClosedDisplayMode="Minimal">
+            <AppBarButton x:Uid="AppBarRefresh" Icon="Refresh" Label="[Refresh]" Click="RefreshAppBarButton_Click" />
+            <AppBarButton x:Uid="AppBarAdd" Icon="Add" Label="[Add]" Click="AddAppBarButton_Click" />
+            <CommandBar.SecondaryCommands>
+                <AppBarButton x:Uid="AppBarAbout" Label="[About]" Click="AboutAppBarButton_click" />
+                <AppBarButton x:Uid="AppBarLogOut" Label="[Log Out]" Click="LogoutAppBarButton_click" />
+            </CommandBar.SecondaryCommands>
+        </CommandBar>
+    </Page.BottomAppBar>
+
+    <Grid x:Name="RootGrid" d:DataContext="{d:DesignData Source=/DesignData/VisibleBoundsWindowSampleData.xaml}">
+        <Grid.Background>
+            <ImageBrush ImageSource="/Assets/BackgroundTrianglify.png" />
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="{Binding StatusBarHeight}" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="{Binding NavigationBarHeight}" />
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0" Background="{StaticResource HeaderTransparency}" />
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="45" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Background="{StaticResource HeaderTransparency}">
+                <Image Grid.Row="1" Margin="0,6" HorizontalAlignment="Center" Source="/Assets/Logos/LogoParticleHorizontal.png" />
+            </Grid>
+            <Grid Grid.Row="1">
+                <controls:AlternatingRowListView x:Name="DeviceListBox" Background="Transparent" Foreground="White" OddRowBackground="{StaticResource HeaderTransparency}" ItemsSource="{Binding}" IsItemClickEnabled="True" ItemClick="DeviceListBox_ItemClick" d:DataContext="{d:DesignData Source=/DesignData/ParticleDeviceCollectionSampleData.xaml}">
+                    <controls:AlternatingRowListView.Header>
+                        <TextBlock x:Uid="YourDevices" Margin="0,18" HorizontalAlignment="Center" Style="{StaticResource SubheaderTextBlockStyle}" Text="[Your Devices]" />
+                    </controls:AlternatingRowListView.Header>
+                    <controls:AlternatingRowListView.ItemContainerStyle>
+                        <Style TargetType="ListViewItem">
+                            <Setter Property="HorizontalContentAlignment" Value="Stretch"></Setter>
+                        </Style>
+                    </controls:AlternatingRowListView.ItemContainerStyle>
+                    <controls:AlternatingRowListView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid IsHoldingEnabled="True" Holding="DeviceListBoxItem_Holding">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width=".02*" />
+                                    <ColumnDefinition Width=".16*" />
+                                    <ColumnDefinition Width=".72*" />
+                                    <ColumnDefinition Width=".02*" />
+                                    <ColumnDefinition Width=".08*" />
+                                </Grid.ColumnDefinitions>
+                                <Image Grid.Column="1" Margin="14,14" Source="{Binding ProductId, Converter={StaticResource ProductIdToImageConverter}}" />
+                                <StackPanel Grid.Column="2" Margin="0,14">
+                                    <TextBlock FontSize="18" Text="{Binding Name, Converter={StaticResource NameToNameConverter}}" />
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="Auto" />
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Grid.Column="0" FontSize="16" Text="{Binding ProductId}" />
+                                        <StackPanel Grid.Column="2" HorizontalAlignment="Right" Orientation="Horizontal">
+                                            <TextBlock HorizontalAlignment="Right" FontSize="16" Text="{Binding State, Converter={StaticResource StateToColorOrStringConverter}}" />
+                                            <Ellipse Width="22" Height="22" Margin="10,0,0,0" Fill="{Binding State, Converter={StaticResource StateToColorOrStringConverter}}" />
+                                        </StackPanel>
+                                    </Grid>
+                                    <TextBlock FontSize="16" Text="{Binding Id, Converter={StaticResource StringToUppercaseConverter}}" />
+                                </StackPanel>
+                                <Button Grid.Column="4" MinWidth="0" Template="{StaticResource MenuButton}" Flyout="{StaticResource DeviceFlyout}" />
+                            </Grid>
+                        </DataTemplate>
+                    </controls:AlternatingRowListView.ItemTemplate>
+                </controls:AlternatingRowListView>
+                <ProgressRing x:Name="LoadDevicesProgress" Background="Transparent" Foreground="White" />
+            </Grid>
+        </Grid>
+    </Grid>
+</ui:GenericPage>

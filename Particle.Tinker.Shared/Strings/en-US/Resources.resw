@@ -1,0 +1,572 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AlreadyHaveAccount.Text" xml:space="preserve">
+    <value>I already have an account</value>
+    <comment>Used on Page: Auth - Signup</comment>
+  </data>
+  <data name="AnalogPinWriteCaption" xml:space="preserve">
+    <value>Set new value for pin: {0}</value>
+    <comment>Used on Flyout: AnalogWrite</comment>
+  </data>
+  <data name="ButtonAnalogRead.Content" xml:space="preserve">
+    <value>analog read</value>
+    <comment>Used on Flyout: PinSetup</comment>
+  </data>
+  <data name="ButtonAnalogWrite.Content" xml:space="preserve">
+    <value>analog write</value>
+    <comment>Used on Flyout: PinSetup</comment>
+  </data>
+  <data name="AppBarAbout.Label" xml:space="preserve">
+    <value>About</value>
+    <comment>Used on Page: Devices</comment>
+  </data>
+  <data name="AppBarAdd.Label" xml:space="preserve">
+    <value>Add</value>
+    <comment>Used on Page: Devices</comment>
+  </data>
+  <data name="AppBarLoginWithToken.Label" xml:space="preserve">
+    <value>Log In with Token</value>
+    <comment>Used on Page: Auth - Login</comment>
+  </data>
+  <data name="AppBarLogOut.Label" xml:space="preserve">
+    <value>Log Out</value>
+    <comment>Used on Page: Devices</comment>
+  </data>
+  <data name="AppBarRefresh.Label" xml:space="preserve">
+    <value>Refresh</value>
+    <comment>Used on Page: Devices</comment>
+  </data>
+  <data name="ButtonGetStarted.Content" xml:space="preserve">
+    <value>GET STARTED</value>
+    <comment>Used on Button</comment>
+  </data>
+  <data name="ButtonLogin.Content" xml:space="preserve">
+    <value>LOG IN</value>
+    <comment>Used on Page: Auth - Login, TokenLogin</comment>
+  </data>
+  <data name="ButtonOk.Content" xml:space="preserve">
+    <value>OK</value>
+    <comment>Used on Button</comment>
+  </data>
+  <data name="ButtonSignup.Content" xml:space="preserve">
+    <value>SIGN UP</value>
+    <comment>Used on Page: Auth - Signup</comment>
+  </data>
+  <data name="ClearTinker.Text" xml:space="preserve">
+    <value>Reset all pin functions</value>
+    <comment>Used on Flyout: Device</comment>
+  </data>
+  <data name="CreateParticleAccount.Text" xml:space="preserve">
+    <value>Create Particle account</value>
+    <comment>Used on Page: Auth - Signup</comment>
+  </data>
+  <data name="DeviceOffline.Text" xml:space="preserve">
+    <value>Device offline</value>
+    <comment>Used on Flyout: DeviceOffline</comment>
+  </data>
+  <data name="DeviceOfflineText.Text" xml:space="preserve">
+    <value>This device is offline, please turn it on and refresh in order to Tinker with it.</value>
+    <comment>Used on Flyout: DeviceOffline</comment>
+  </data>
+  <data name="DialogButtonCancel.Content" xml:space="preserve">
+    <value>cancel</value>
+    <comment>Used on Flyout</comment>
+  </data>
+  <data name="DialogButtonFlash.Content" xml:space="preserve">
+    <value>flash</value>
+    <comment>Used on Flyout: DeviceFlash</comment>
+  </data>
+  <data name="DialogButtonOk.Content" xml:space="preserve">
+    <value>ok</value>
+    <comment>Used on Flyout</comment>
+  </data>
+  <data name="DialogButtonReFlashTinker.Content" xml:space="preserve">
+    <value>re-flash tinker</value>
+    <comment>Used on Flyout: DeviecNotTinker</comment>
+  </data>
+  <data name="DialogButtonRename.Content" xml:space="preserve">
+    <value>rename</value>
+    <comment>Used on Flyout: DeviceRename</comment>
+  </data>
+  <data name="DialogButtonSet.Content" xml:space="preserve">
+    <value>set</value>
+    <comment>Used on Flyout</comment>
+  </data>
+  <data name="DialogButtonTinkerAnyway.Content" xml:space="preserve">
+    <value>tinker anyway</value>
+    <comment>Used on Flyout: DeviecNotTinker</comment>
+  </data>
+  <data name="DialogButtonUnclaim.Content" xml:space="preserve">
+    <value>unclaim</value>
+    <comment>Used on Flyout: DeviceUnclaim</comment>
+  </data>
+  <data name="ButtonDigitalRead.Content" xml:space="preserve">
+    <value>digital read</value>
+    <comment>Used on Flyout: PinSetup</comment>
+  </data>
+  <data name="ButtonDigitalWrite.Content" xml:space="preserve">
+    <value>digital write</value>
+    <comment>Used on Flyout: PinSetup</comment>
+  </data>
+  <data name="Documentation.Text" xml:space="preserve">
+    <value>Documentation</value>
+    <comment>Used on Flyout: Device</comment>
+  </data>
+  <data name="DontHaveAccount.Text" xml:space="preserve">
+    <value>I don't have an account</value>
+    <comment>Used on Page: Auth - Login</comment>
+  </data>
+  <data name="DontHaveToken.Text" xml:space="preserve">
+    <value>I don't have a token</value>
+    <comment>Used on Page: Auth - TokenLogin</comment>
+  </data>
+  <data name="EmailPlaceholder.PlaceholderText" xml:space="preserve">
+    <value>email</value>
+    <comment>Used on Page: Auth - Login, Signup, ForgotPassword, CreateToken</comment>
+  </data>
+  <data name="FlashTinkerQuestion.Text" xml:space="preserve">
+    <value>Flash Tinker?</value>
+    <comment>Used on Flyout: DeviceFlash</comment>
+  </data>
+  <data name="ForgotPassword.Text" xml:space="preserve">
+    <value>I forgot my password</value>
+    <comment>Used on Page: Auth - Login</comment>
+  </data>
+  <data name="GetStartedBeta.Text" xml:space="preserve">
+    <value>beta</value>
+    <comment>Used on Page: GetStarted</comment>
+  </data>
+  <data name="InfoConnection.Text" xml:space="preserve">
+    <value>Connection:</value>
+    <comment>Used on Page: DeviceInfo</comment>
+  </data>
+  <data name="InfoDevice.Text" xml:space="preserve">
+    <value>Device:</value>
+    <comment>Used on Page: DeviceInfo</comment>
+  </data>
+  <data name="InfoFunctions.Text" xml:space="preserve">
+    <value>Functions:</value>
+    <comment>Used on Page: DeviceInfo</comment>
+  </data>
+  <data name="InfoId.Text" xml:space="preserve">
+    <value>Id:</value>
+    <comment>Used on Page: DeviceInfo</comment>
+  </data>
+  <data name="InfoIPAddress.Text" xml:space="preserve">
+    <value>IP Address:</value>
+    <comment>Used on Page: DeviceInfo</comment>
+  </data>
+  <data name="InfoLastHeard.Text" xml:space="preserve">
+    <value>Last Heard:</value>
+    <comment>Used on Page: DeviceInfo</comment>
+  </data>
+  <data name="InfoState.Text" xml:space="preserve">
+    <value>State:</value>
+    <comment>Used on Page: DeviceInfo</comment>
+  </data>
+  <data name="InfoVariables.Text" xml:space="preserve">
+    <value>Variables:</value>
+    <comment>Used on Page: DeviceInfo</comment>
+  </data>
+  <data name="Info.Text" xml:space="preserve">
+    <value>Info</value>
+    <comment>Used on Flyout: Device</comment>
+  </data>
+  <data name="NotRunningTinker.Text" xml:space="preserve">
+    <value>Device not running Tinker</value>
+    <comment>Used on Flyout: DeviecNotTinker</comment>
+  </data>
+  <data name="NotRunningTinkerText.Text" xml:space="preserve">
+    <value>This device is not running Tinker firmware</value>
+    <comment>Used on Flyout: DeviecNotTinker</comment>
+  </data>
+  <data name="ParticleAppTinker.Text" xml:space="preserve">
+    <value>Particle app/Tinker</value>
+    <comment>Used on Flyout: Device</comment>
+  </data>
+  <data name="ParticleCommunity.Text" xml:space="preserve">
+    <value>Particle community</value>
+    <comment>Used on Flyout: Device</comment>
+  </data>
+  <data name="ParticleLogin.Text" xml:space="preserve">
+    <value>Particle Login</value>
+    <comment>Used on Page: Auth - Login, TokenLogin</comment>
+  </data>
+  <data name="ParticleSupport.Text" xml:space="preserve">
+    <value>Particle support</value>
+    <comment>Used on Flyout: Device</comment>
+  </data>
+  <data name="PasswordPlaceholder.PlaceholderText" xml:space="preserve">
+    <value>password</value>
+    <comment>Used on Page: Auth - Login, Signup, CreateToken</comment>
+  </data>
+  <data name="ReFlashTinker.Text" xml:space="preserve">
+    <value>Re-flash Tinker</value>
+    <comment>Used on Flyout: Device</comment>
+  </data>
+  <data name="Rename.Text" xml:space="preserve">
+    <value>Rename...</value>
+    <comment>Used on Flyout: Device</comment>
+  </data>
+  <data name="RenameDevice.Text" xml:space="preserve">
+    <value>Rename Device</value>
+    <comment>Used on Flyout: DeviceRename</comment>
+  </data>
+  <data name="RenameDeviceText.Text" xml:space="preserve">
+    <value>Set new name for your device:</value>
+    <comment>Used on Flyout: DeviceRename</comment>
+  </data>
+  <data name="SettingUpPhoton.Text" xml:space="preserve">
+    <value>Setting up your Photon/Core</value>
+    <comment>Used on Flyout: Device</comment>
+  </data>
+  <data name="SignupAnd.Text" xml:space="preserve">
+    <value>and</value>
+    <comment>Used on Page: Auth - Signup</comment>
+  </data>
+  <data name="SignupByClicking.Text" xml:space="preserve">
+    <value>By clicking SIGN UP you are indicating thay you have read and agree to the</value>
+    <comment>Used on Page: Auth - Signup</comment>
+  </data>
+  <data name="SignupPrivacyPolicy.Text" xml:space="preserve">
+    <value>Privacy Policy</value>
+    <comment>Used on Page: Auth - Signup</comment>
+  </data>
+  <data name="SignupTermsOfService.Text" xml:space="preserve">
+    <value>Terms of Service</value>
+    <comment>Used on Page: Auth - Signup</comment>
+  </data>
+  <data name="Support.Text" xml:space="preserve">
+    <value>Support</value>
+    <comment>Used on Flyout: Device</comment>
+  </data>
+  <data name="TokenPlaceholder.PlaceholderText" xml:space="preserve">
+    <value>token</value>
+    <comment>Used on Page: Auth - TokenLogin</comment>
+  </data>
+  <data name="Unclaim.Text" xml:space="preserve">
+    <value>Unclaim</value>
+    <comment>Used on Flyout: Device</comment>
+  </data>
+  <data name="UnclaimDeviceQuestion.Text" xml:space="preserve">
+    <value>Unclaim Device?</value>
+    <comment>Used on Flyout: DeviceUnclaim</comment>
+  </data>
+  <data name="VerifyPasswordPlaceholder.PlaceholderText" xml:space="preserve">
+    <value>verify password</value>
+    <comment>Used on Page: Auth - Signup</comment>
+  </data>
+  <data name="Version.Text" xml:space="preserve">
+    <value>Version</value>
+    <comment>Used on Page: About</comment>
+  </data>
+  <data name="YourDevices.Text" xml:space="preserve">
+    <value>Your Devices</value>
+    <comment>Used on Page: Devices</comment>
+  </data>
+  <data name="ButtonAnalogWriteDac.Content" xml:space="preserve">
+    <value>analog write dac</value>
+    <comment>Used on Flyout: PinSetup</comment>
+  </data>
+  <data name="ButtonResetPassword.Content" xml:space="preserve">
+    <value>RESET PASSWORD</value>
+    <comment>Used on Page: Auth - ForgotPassword</comment>
+  </data>
+  <data name="Cancel.Text" xml:space="preserve">
+    <value>Cancel</value>
+    <comment>Used on Page: Auth - ForgotPassword, CreateToken</comment>
+  </data>
+  <data name="RequestPasswordReset.Text" xml:space="preserve">
+    <value>Request password reset</value>
+    <comment>Used on Page: Auth - ForgotPassword</comment>
+  </data>
+  <data name="RequestPaswordResetText.Text" xml:space="preserve">
+    <value>An email will be sent to you with a link to a webpage where you can create a new password.</value>
+    <comment>Used on Page: Auth - ForgotPassword</comment>
+  </data>
+  <data name="Electron.Text" xml:space="preserve">
+    <value>Electron</value>
+    <comment>Used on Flyout: Add</comment>
+  </data>
+  <data name="Photon.Text" xml:space="preserve">
+    <value>Photon</value>
+    <comment>Used on Flyout: Add</comment>
+  </data>
+  <data name="UnnamedDevice" xml:space="preserve">
+    <value>(Unnamed device)</value>
+    <comment>Used on Page: Devices, DevicePin, DeviceInfo</comment>
+  </data>
+  <data name="WelcomToTinker.Text" xml:space="preserve">
+    <value>Welcome To Tinker!
+
+Tinker is the fastest and easiest way to prototype and play with your Photon.
+
+You can access the basic input/output functions of the Photon without writing a line of code.
+
+Tap any pin to get started, select a pin function and tinker with the value. Hold a pin to reset its function. Start with pin D7 - select digitalWrite - blink the attached LED. For more information visit: docs.particle.io/photon/tinker/
+
+Enjoy!</value>
+    <comment>Used on Page: DevicePin</comment>
+  </data>
+  <data name="WelcomToTinkerParticleTeam.Text" xml:space="preserve">
+    <value>-The Particle Team</value>
+    <comment>Used on Page: DevicePin</comment>
+  </data>
+  <data name="AppBarCreateToken.Label" xml:space="preserve">
+    <value>Create Token</value>
+    <comment>Used on Page: Auth - CreateToken</comment>
+  </data>
+  <data name="ButtonCreate.Content" xml:space="preserve">
+    <value>CREATE</value>
+    <comment>Used on Page: Auth - CreateToken</comment>
+  </data>
+  <data name="CreateParticleToken.Text" xml:space="preserve">
+    <value>Create Particle token</value>
+    <comment>Used on Page: Auth - CreateToken</comment>
+  </data>
+  <data name="Done.Text" xml:space="preserve">
+    <value>Done</value>
+    <comment>Used on Flyout: CreateToken</comment>
+  </data>
+  <data name="Expires.Header" xml:space="preserve">
+    <value>Expires</value>
+    <comment>Used on Page: Auth - CreateToken</comment>
+  </data>
+  <data name="NewToken.Text" xml:space="preserve">
+    <value>Token</value>
+    <comment>Used on Flyout: CreateToken</comment>
+  </data>
+  <data name="NewTokenText.Text" xml:space="preserve">
+    <value>Here is your new token:</value>
+    <comment>Used on Flyout: CreateToken</comment>
+  </data>
+  <data name="ButtonNeverExpires.Content" xml:space="preserve">
+    <value>Never Expires</value>
+    <comment>Used on Page: Auth - CreateToken</comment>
+  </data>
+  <data name="InfoMbsUsed.Text" xml:space="preserve">
+    <value>Mbs Used:</value>
+    <comment>Used on Page: DeviceInfo</comment>
+  </data>
+  <data name="ButtonCall.Content" xml:space="preserve">
+    <value>CALL</value>
+    <comment>Used on Page: FunctionsPage</comment>
+  </data>
+  <data name="ButtonRefresh.Content" xml:space="preserve">
+    <value>REFRESH</value>
+    <comment>Used on Page: VariablesPage</comment>
+  </data>
+  <data name="FunctionArgument.Text" xml:space="preserve">
+    <value>Argument:</value>
+    <comment>Used on Page: FunctionsPage</comment>
+  </data>
+  <data name="FunctionFunction.Text" xml:space="preserve">
+    <value>Function:</value>
+    <comment>Used on Page: FunctionsPage</comment>
+  </data>
+  <data name="FunctionResult.Text" xml:space="preserve">
+    <value>Result:</value>
+    <comment>Used on Page: VariablesPage, FunctionsPage</comment>
+  </data>
+  <data name="VariableVariable.Text" xml:space="preserve">
+    <value>Variable:</value>
+    <comment>Used on Page: VariablesPage</comment>
+  </data>
+  <data name="Events.Text" xml:space="preserve">
+    <value>Events</value>
+    <comment>Used on Page: Events</comment>
+  </data>
+  <data name="EventData.Text" xml:space="preserve">
+    <value>Data:</value>
+    <comment>Used on Page: EventPage</comment>
+  </data>
+  <data name="EventEvent.Text" xml:space="preserve">
+    <value>Event:</value>
+    <comment>Used on Page: EventPage</comment>
+  </data>
+  <data name="EventPublished.Text" xml:space="preserve">
+    <value>Published:</value>
+    <comment>Used on Page: EventPage</comment>
+  </data>
+  <data name="Functions.Text" xml:space="preserve">
+    <value>Functions</value>
+    <comment>Used on Page: FunctionsPage</comment>
+  </data>
+  <data name="Variables.Text" xml:space="preserve">
+    <value>Variables</value>
+    <comment>Used on Page: VariablesPage</comment>
+  </data>
+  <data name="AppBarClear.Label" xml:space="preserve">
+    <value>Clear</value>
+    <comment>Used on Page: Events</comment>
+  </data>
+  <data name="AppBarPause.Label" xml:space="preserve">
+    <value>Pause</value>
+    <comment>Used on Page: Events</comment>
+  </data>
+  <data name="AppBarStart.Label" xml:space="preserve">
+    <value>Start</value>
+    <comment>Used on Page: Events</comment>
+  </data>
+  <data name="AuthCredentialsError" xml:space="preserve">
+    <value>Your credentials are invalid</value>
+    <comment>Used on Page: Auth - Login, TokenCreate, TokenLogin</comment>
+  </data>
+  <data name="CreateCredentialsError" xml:space="preserve">
+    <value>This account already exists</value>
+    <comment>Used on Page: Auth - Signup</comment>
+  </data>
+  <data name="ErrorEmailIsRequired" xml:space="preserve">
+    <value>Email field is required</value>
+    <comment>Used on Page: Auth - Login, Signup, TokenCreate, ForgotPassword</comment>
+  </data>
+  <data name="ErrorPasswordIsRequired" xml:space="preserve">
+    <value>Password field is required</value>
+    <comment>Used on Page: Auth - Login, Signup, TokenCreate</comment>
+  </data>
+  <data name="ErrorPasswordsMustMatch" xml:space="preserve">
+    <value>Password fields must match</value>
+    <comment>Used on Page: Auth - Signup</comment>
+  </data>
+  <data name="ErrorTokenIsRequired" xml:space="preserve">
+    <value>Token field is required</value>
+    <comment>Used on Page: Auth - TokenLogin</comment>
+  </data>
+  <data name="ForgotPasswordError" xml:space="preserve">
+    <value>Could not find a user with the supplied email address</value>
+    <comment>Used on Page: Auth - ForgotPassword</comment>
+  </data>
+  <data name="ForgotPasswordSuccess" xml:space="preserve">
+    <value>Please check your email and follow the directions contained inside</value>
+    <comment>Used on Page: Auth - ForgotPassword</comment>
+  </data>
+  <data name="TokenCreateExpireTimePast" xml:space="preserve">
+    <value>Expire time is in the past</value>
+    <comment>Used on Page: Auth - TokenCreate</comment>
+  </data>
+  <data name="TokenCreateExpireTimeSoon" xml:space="preserve">
+    <value>Expire time is too soon</value>
+    <comment>Used on Page: Auth - TokenCreate</comment>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Error</value>
+    <comment>Used on Page: Function, Variables</comment>
+  </data>
+</root>

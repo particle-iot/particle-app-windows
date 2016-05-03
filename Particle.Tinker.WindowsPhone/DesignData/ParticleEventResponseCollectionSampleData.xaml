@@ -1,0 +1,6 @@
+﻿<Models:ParticleEventResponseCollection xmlns:Models="using:Particle.SDK.Models">
+    <Models:ParticleEventResponse Data="started" DeviceId="3b0038001747343338333633" Name="spark/flash/status" PublishedAt="04/13/2016 12:00:00" TTL="60"/>
+    <Models:ParticleEventResponse Data="failed" DeviceId="3b0038001747343338333633" Name="spark/flash/status" PublishedAt="04/13/2016 12:00:30" TTL="60"/>
+    <Models:ParticleEventResponse Data="online" DeviceId="3b0038001747343338333633" Name="spark/status" PublishedAt="04/13/2016 12:01:00" TTL="60"/>
+    <Models:ParticleEventResponse Data="CFD9C8BDB2A15BEDAC69DE804D14B98FC2112EA1302534E210AB462378D05783" DeviceId="3b0038001747343338333633" Name="spark/device/app-hash" PublishedAt="04/13/2016 12:01:30" TTL="60"/>
+</Models:ParticleEventResponseCollection>

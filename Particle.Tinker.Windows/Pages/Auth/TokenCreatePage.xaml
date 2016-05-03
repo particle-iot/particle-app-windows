@@ -1,0 +1,116 @@
+﻿<ui:GenericPage
+    x:Class="Particle.Tinker.Pages.Auth.TokenCreatePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:ui="using:Particle.UI"
+    xmlns:local="using:Particle.Tinker.Pages.Auth"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <ResourceDictionary>
+            <Flyout x:Name="NewTokenFlyout">
+                <StackPanel Margin="20,11,20,20">
+                    <TextBlock x:Uid="NewToken" Style="{StaticResource MessageDialogHeaderStyle}" />
+                    <TextBlock x:Uid="NewTokenText" Margin="0,20" Style="{StaticResource MessageDialogTextStyle}" TextWrapping="Wrap" />
+                    <TextBox x:Name="NewTokenValue" IsReadOnly="True" />
+                    <Grid Margin="0,10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width=".43*" />
+                            <ColumnDefinition Width=".04*" />
+                            <ColumnDefinition Width=".43*" />
+                        </Grid.ColumnDefinitions>
+                        <Button x:Name="OkButton" x:Uid="DialogButtonOk" Grid.Column="0" HorizontalAlignment="Stretch" Click="OkButton_click" />
+                    </Grid>
+                </StackPanel>
+            </Flyout>
+        </ResourceDictionary>
+    </Page.Resources>
+
+    <Grid x:Name="RootGrid" d:DataContext="{d:DesignData Source=/DesignData/VisibleBoundsWindowSampleData.xaml}">
+        <Grid.Background>
+            <ImageBrush ImageSource="/Assets/BackgroundTrianglify.png" />
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="{Binding StatusBarHeight}" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="{Binding NavigationBarHeight}" />
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0" Background="{StaticResource HeaderTransparency}" />
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="45" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Background="{StaticResource HeaderTransparency}">
+                <Image Margin="0,6" HorizontalAlignment="Center" Source="/Assets/Logos/LogoParticleHorizontal.png" />
+            </Grid>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width=".09*" />
+                    <ColumnDefinition Width=".82*" />
+                    <ColumnDefinition Width=".09*" />
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height=".22*" />
+                        <RowDefinition Height=".03*" />
+                        <RowDefinition Height=".75*" />
+                    </Grid.RowDefinitions>
+                    <TextBlock x:Uid="CreateParticleToken" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Bottom" Style="{StaticResource SubheaderTextBlockStyle}" Text="[Create Particle token]" />
+                    <ScrollViewer Grid.Row="2">
+                        <StackPanel>
+                            <Grid>
+                                <TextBox x:Name="Email" x:Uid="EmailPlaceholder" Margin="0" Padding="10" PlaceholderText="[email]" InputScope="EmailSmtpAddress" KeyUp="TextBox_KeyUp" />
+                                <Grid x:Name="EmailError" Width="20" Height="20" Margin="0,0,20,0" HorizontalAlignment="Right" Visibility="Collapsed">
+                                    <Ellipse Width="20" Height="20" Fill="{StaticResource ErrorRed}" />
+                                    <TextBlock TextAlignment="Center" VerticalAlignment="Center" FontSize="16" Text="!" />
+                                </Grid>
+                            </Grid>
+                            <Grid>
+                                <PasswordBox x:Name="Password" x:Uid="PasswordPlaceholder" Margin="0" Padding="10" PlaceholderText="[password]" KeyUp="TextBox_KeyUp" />
+                                <Grid x:Name="PasswordError" Width="20" Height="20" Margin="0,0,20,0" HorizontalAlignment="Right" Visibility="Collapsed">
+                                    <Ellipse Width="20" Height="20" Fill="{StaticResource ErrorRed}" />
+                                    <TextBlock TextAlignment="Center" VerticalAlignment="Center" FontSize="16" Text="!" />
+                                </Grid>
+                            </Grid>
+                            <CheckBox x:Name="NeverExpireCheckbox" x:Uid="ButtonNeverExpires" Content="[Never Expires]" IsChecked="True" Checked="NeverExpireCheckbox_Checked" Unchecked="NeverExpireCheckbox_Unchecked" />
+                            <Grid x:Name="ExpiresGrid" Visibility="Collapsed">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width=".50*" />
+                                    <ColumnDefinition Width=".50*" />
+                                </Grid.ColumnDefinitions>
+                                <DatePicker x:Name="ExpireDate" x:Uid="Expires" Grid.Column="0" Padding="0,0,5,0" Header="[Expires]" />
+                                <TimePicker x:Name="ExpireTime" Grid.Column="1" Padding="5,0,0,0" Header=" " />
+                            </Grid>
+                            <Border x:Name="ErrorBorder"  Margin="0,20,0,0" Padding="10" Background="#CCFFFFFF" BorderBrush="{StaticResource ErrorRed}" BorderThickness="5,0,0,0" Visibility="Collapsed">
+                                <TextBlock x:Name="ErrorText" Foreground="{StaticResource ErrorRed}" FontSize="20" />
+                            </Border>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width=".05*" />
+                                    <ColumnDefinition Width=".90*" />
+                                    <ColumnDefinition Width=".05*" />
+                                </Grid.ColumnDefinitions>
+                                <StackPanel Grid.Column="1">
+                                    <Grid Margin="0,20,0,0">
+                                        <Button x:Name="CreateButton" x:Uid="ButtonCreate" HorizontalAlignment="Stretch" BorderThickness="0" Background="{StaticResource ButtonBlue}" Content="[CREATE]" Click="CreateButton_Click" />
+                                        <ProgressBar x:Name="ProgressBar" VerticalAlignment="Center" Background="Transparent" />
+                                    </Grid>
+                                    <HyperlinkButton x:Name="CancelHyperlink" Margin="0,20,0,0" HorizontalAlignment="Center" FontSize="20" Click="DoneButton_Click">
+                                        <TextBlock>
+                                            <Underline>
+                                                <Run x:Uid="Done" Text="[Done]" />
+                                            </Underline>
+                                        </TextBlock>
+                                    </HyperlinkButton>
+                                </StackPanel>
+                            </Grid>
+                        </StackPanel>
+                    </ScrollViewer>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</ui:GenericPage>

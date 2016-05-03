@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>2ab3494c-c06b-4bc6-a071-8f8d21e2543d</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>Particle.Tinker</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="$(MSBuildThisFileDirectory)App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\PinButton.xaml.cs">
+      <DependentUpon>PinButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\Converters.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FlyoutHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\Auth\ForgotPasswordPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\Auth\LoginPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\Auth\TokenCreatePage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\Auth\SignupPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\Auth\TokenLoginPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\DevicesPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\Device\DevicePinPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\Device\DeviceInfoPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\Device\EventsPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\Device\FunctionsPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\Device\VariablesPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\AboutPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\GetStartedPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TinkerData.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pin.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UI\GenericPage.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="$(MSBuildThisFileDirectory)Controls\PinButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Dictionaries\ButtonDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Dictionaries\ColorDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Dictionaries\FlyoutDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Dictionaries\StyleDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Dictionaries\ThemeDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="$(MSBuildThisFileDirectory)Strings\en-US\Resources.resw" />
+    <PRIResource Include="$(MSBuildThisFileDirectory)Strings\*OAuthClient.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="$(MSBuildThisFileDirectory)Assets\BackgroundTrianglify.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\DeviceShadow.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Icons\IconBackArrow.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Icons\IconEdit.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Icons\IconMore.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Icons\IconRefresh.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Logos\LogoParticleHorizontal.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Logos\LogoParticleVertical.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Prototypes\PrototypeCore.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Prototypes\PrototypeElectron.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Prototypes\PrototypeP1.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Prototypes\PrototypePhoton.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Prototypes\PrototypeUnknown.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\TinkerLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="$(MSBuildThisFileDirectory)Firmware\PhotonTinker.bin" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="$(MSBuildThisFileDirectory)Firmware\ElectronTinker.bin" />
+  </ItemGroup>
+</Project>
