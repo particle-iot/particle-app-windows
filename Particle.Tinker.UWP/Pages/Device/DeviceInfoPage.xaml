@@ -1,0 +1,154 @@
+﻿<ui:GenericPage
+    x:Class="Particle.Tinker.Pages.Device.DeviceInfoPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:ui="using:Particle.UI"
+    xmlns:local="using:Particle.Tinker.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:converters="using:Particle.Tinker.Converters"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <converters:CellularToConnectionConverter x:Key="CellularToConnectionConverter" />
+        <converters:HideIfContentConverter x:Key="HideIfContentConverter" />
+        <converters:NameToNameConverter x:Key="NameToNameConverter" />
+        <converters:OnlyShowForCoreConverter x:Key="OnlyShowForCoreConverter" />
+        <converters:OnlyShowForElectronConverter x:Key="OnlyShowForElectronConverter" />
+        <converters:OnlyShowForPhotonConverter x:Key="OnlyShowForPhotonConverter" />
+        <converters:ProductIdToImageConverter x:Key="ProductIdToImageConverter" />
+        <converters:StateToColorOrStringConverter x:Key="StateToColorOrStringConverter" />
+        <converters:StateToEmtyListConverter x:Key="StateToEmtyListConverter" />
+        <converters:StringFormatConverter x:Key="StringFormatConverter" />
+        <converters:StringKeyValuePairConverter x:Key="StringKeyValuePairConverter" />
+        <converters:StringToUppercaseConverter x:Key="StringToUppercaseConverter" />
+    </Page.Resources>
+
+    <Grid x:Name="RootGrid" d:DataContext="{d:DesignData Source=/DesignData/VisibleBoundsWindowSampleData.xaml}">
+        <Grid.Background>
+            <ImageBrush ImageSource="/Assets/BackgroundTrianglify.png" />
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="{Binding StatusBarHeight}" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="{Binding NavigationBarHeight}" />
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0" Background="{StaticResource HeaderTransparency}" />
+        <Grid Grid.Row="1" x:Name="DeviceGrid" d:DataContext="{d:DesignData Source=/DesignData/ParticleDeviceSampleData.xaml}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="45" />
+                <RowDefinition Height="38" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Background="{StaticResource HeaderTransparency}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width=".04*" />
+                    <ColumnDefinition Width=".10*" />
+                    <ColumnDefinition Width=".72*" />
+                    <ColumnDefinition Width=".10*" />
+                    <ColumnDefinition Width=".04*" />
+                </Grid.ColumnDefinitions>
+                <Image Grid.Column="2" Margin="0,6" HorizontalAlignment="Center" Source="/Assets/Logos/LogoParticleHorizontal.png" />
+                <Button x:Name="RefreshButton" Grid.Column="3" MinWidth="0" Margin="5" HorizontalAlignment="Center" Template="{StaticResource RefreshButton}" Click="RefreshButton_Click" />
+            </Grid>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width=".04*" />
+                    <ColumnDefinition Width=".82*" />
+                    <ColumnDefinition Width=".10*" />
+                    <ColumnDefinition Width=".04*" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="1" VerticalAlignment="Center" FontSize="24" FontWeight="SemiLight" TextTrimming="CharacterEllipsis" TextWrapping="NoWrap" Text="{Binding Name, Converter={StaticResource NameToNameConverter}}" />
+            </Grid>
+            <ScrollViewer Grid.Row="2">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width=".04*" />
+                        <ColumnDefinition Width=".92*" />
+                        <ColumnDefinition Width=".04*" />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="1">
+                        <Grid Margin="0,10,0,0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width=".16*" />
+                                <ColumnDefinition Width=".04*" />
+                                <ColumnDefinition Width=".80*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto" />
+                            </Grid.RowDefinitions>
+                            <Image Grid.Column="0" VerticalAlignment="Top" Source="{Binding ProductId, Converter={StaticResource ProductIdToImageConverter}}" />
+                            <Grid Grid.Column="2">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto" />
+                                    <ColumnDefinition Width=".05*" />
+                                    <ColumnDefinition Width=".95*" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="auto" />
+                                </Grid.RowDefinitions>
+                                <TextBlock x:Uid="InfoDevice" Grid.Column="0" Grid.Row="0" FontSize="16" Text="[Device:]" />
+                                <TextBlock Grid.Column="2" Grid.Row="0" FontSize="16" Text="{Binding ProductId}" />
+                                <TextBlock x:Uid="InfoState" Grid.Column="0" Grid.Row="1" FontSize="16" Text="[State:]" />
+                                <StackPanel Grid.Column="2" Grid.Row="1" Orientation="Horizontal">
+                                    <TextBlock FontSize="16" Text="{Binding State, Converter={StaticResource StateToColorOrStringConverter}}" />
+                                    <Ellipse Width="16" Height="16" Margin="10,0,0,0" Fill="{Binding State, Converter={StaticResource StateToColorOrStringConverter}}" />
+                                </StackPanel>
+                                <TextBlock x:Uid="InfoLastHeard" Grid.Column="0" Grid.Row="2" FontSize="16" Text="[Last Heard:]" />
+                                <TextBlock Grid.Column="2" Grid.Row="2" FontSize="16" Text="{Binding LastHeard}" />
+                                <TextBlock x:Uid="InfoConnection" Grid.Column="0" Grid.Row="3" FontSize="16" Text="[Connection:]" />
+                                <TextBlock Grid.Column="2" Grid.Row="3" FontSize="16" Text="{Binding Cellular, Converter={StaticResource CellularToConnectionConverter}}" />
+                                <TextBlock Grid.Column="0" Grid.Row="4" FontSize="16" Visibility="{Binding ProductId, Converter={StaticResource OnlyShowForCoreConverter}}" Text="CC3000:" />
+                                <TextBlock Grid.Column="2" Grid.Row="4" FontSize="16" Visibility="{Binding ProductId, Converter={StaticResource OnlyShowForCoreConverter}}" Text="{Binding CC3000PatchVersion}" />
+                                <TextBlock x:Uid="InfoMbsUsed" Grid.Column="0" Grid.Row="4" FontSize="16" Visibility="{Binding ProductId, Converter={StaticResource OnlyShowForElectronConverter}}" Text="[Mbs Used:]" />
+                                <TextBlock Grid.Column="2" Grid.Row="4" FontSize="16" Visibility="{Binding ProductId, Converter={StaticResource OnlyShowForElectronConverter}}" Text="{Binding MbsUsed}" />
+                            </Grid>
+                        </Grid>
+                        <TextBlock x:Uid="InfoId" Padding="0,10,0,0" FontSize="16" Text="[Id:]" />
+                        <TextBox IsReadOnly="True" Text="{Binding Id}" />
+                        <TextBlock x:Uid="InfoIPAddress" Padding="0,10,0,0" FontSize="16" Text="[IP Address:]" />
+                        <TextBox IsReadOnly="True" Text="{Binding LastIPAddress}" />
+                        <StackPanel Visibility="{Binding ProductId, Converter={StaticResource OnlyShowForElectronConverter}}">
+                            <TextBlock Padding="0,10,0,0" FontSize="16" Text="ICCID:" />
+                            <TextBox IsReadOnly="True" Text="{Binding LastICCID}" />
+                            <TextBlock Padding="0,10,0,0" FontSize="16" Text="IMEI:" />
+                            <TextBox IsReadOnly="True" Text="{Binding IMEI}" />
+                        </StackPanel>
+                        <TextBlock x:Uid="InfoVariables" Padding="0,10,0,0" FontSize="16" Text="[Variables:]" />
+                        <TextBox MinHeight="32" Height="32" Padding="5,6" IsHitTestVisible="False" IsReadOnly="True" FontSize="12" Visibility="{Binding Variables, Converter={StaticResource HideIfContentConverter}}" Text="{Binding State, Converter={StaticResource StateToEmtyListConverter}}" />
+                        <ListBox MaxHeight="150" SelectionMode="Single" ItemsSource="{Binding Variables}" SelectionChanged="VariablesListBox_SelectionChanged">
+                            <ListBox.ItemContainerStyle>
+                                <Style TargetType="ListBoxItem">
+                                    <Setter Property="HorizontalContentAlignment" Value="Stretch"></Setter>
+                                </Style>
+                            </ListBox.ItemContainerStyle>
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width=".8*" />
+                                            <ColumnDefinition Width=".2*" />
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Grid.Column="0" Text="{Binding Converter={StaticResource StringKeyValuePairConverter}, ConverterParameter=key}" />
+                                        <TextBlock Grid.Column="1" Text="{Binding Converter={StaticResource StringKeyValuePairConverter}, ConverterParameter=value}" />
+                                    </Grid>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+                        <TextBlock x:Uid="InfoFunctions" Padding="0,10,0,0" FontSize="16" Text="[Functions:]" />
+                        <ListBox MaxHeight="150" SelectionMode="Single" ItemsSource="{Binding Functions}" SelectionChanged="FunctionListBox_SelectionChanged">
+                            <ListBox.Items>
+                                <ListBoxItem Content="{Binding State, Converter={StaticResource StateToEmtyListConverter}}" />
+                            </ListBox.Items>
+                        </ListBox>
+                    </StackPanel>
+                </Grid>
+            </ScrollViewer>
+        </Grid>
+    </Grid>
+</ui:GenericPage>

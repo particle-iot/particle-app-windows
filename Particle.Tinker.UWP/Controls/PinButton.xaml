@@ -1,0 +1,62 @@
+﻿<UserControl
+    x:Class="Particle.Tinker.Controls.PinButton"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Particle.Tinker.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="80"
+    d:DesignWidth="253"
+    x:Name="root">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <local:DigitalValueToBackgroundConverter x:Key="DigitalValueToBackgroundConverter" />
+            <local:KnownValueToVisibilityConverter x:Key="KnownValueToVisibilityConverter" />
+            <local:PinActionDigitalToVisibilityConverter x:Key="PinActionDigitalToVisibilityConverter" />
+            <local:PinActionToFillConverter x:Key="PinActionToFillConverter" />
+            <local:PinActionToFontSizeConverter x:Key="PinActionToFontSizeConverter" />
+            <local:PinActionToStrokeConverter x:Key="PinActionToStrokeConverter" />
+            <local:PinActionToTextMarginConverter x:Key="PinActionToTextMarginConverter" />
+            <local:PinAlignmentToFlowDirectionConverter x:Key="PinAlignmentToFlowDirectionConverter" />
+            <local:PinAlignmentToGridColumnConverter x:Key="PinAlignmentToGridColumnConverter" />
+            <local:PinAlignmentToGridWidthConverter x:Key="PinAlignmentToGridWidthConverter" />
+            <local:RequestErrorToFillConverter x:Key="RequestErrorToFillConverter" />
+            <local:SyncingToFillConverter x:Key="SyncingToFillConverter" />
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Border Background="{Binding RequestError, Converter={StaticResource RequestErrorToFillConverter}}" d:DataContext="{d:DesignData Source=/DesignData/PinSampleData/PinA0SampleData.xaml}">
+        <Grid Background="{Binding Syncing, Converter={StaticResource SyncingToFillConverter}}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="{Binding Alignment, ElementName=root, Converter={StaticResource PinAlignmentToGridWidthConverter}, ConverterParameter=0}" />
+                <ColumnDefinition Width="{Binding Alignment, ElementName=root, Converter={StaticResource PinAlignmentToGridWidthConverter}, ConverterParameter=1}" />
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="{Binding Alignment, ElementName=root, Converter={StaticResource PinAlignmentToGridColumnConverter}, ConverterParameter=pin}" Margin="7">
+                <Viewbox>
+                    <Ellipse Width="52" Height="52" Fill="{Binding ConfiguredAction, Converter={StaticResource PinActionToFillConverter}}" />
+                </Viewbox>
+                <Viewbox>
+                    <Ellipse Width="52" Height="52" Fill="{Binding ValueText, Converter={StaticResource DigitalValueToBackgroundConverter}, ConverterParameter=background}" />
+                </Viewbox>
+                <Viewbox>
+                    <Ellipse Width="47" Height="47" StrokeThickness="5" Stroke="{Binding ConfiguredAction, Converter={StaticResource PinActionToStrokeConverter}}" />
+                </Viewbox>
+                <Viewbox>
+                    <TextBlock Margin="25" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="52" Foreground="{Binding ValueText, Converter={StaticResource DigitalValueToBackgroundConverter}, ConverterParameter=text}" Text="{Binding Caption}" />
+                </Viewbox>
+            </Grid>
+
+            <Viewbox Grid.Column="{Binding Alignment, ElementName=root, Converter={StaticResource PinAlignmentToGridColumnConverter}, ConverterParameter=value}" Visibility="{Binding ValueKnown, Converter={StaticResource KnownValueToVisibilityConverter}}">
+                <Grid>
+                    <StackPanel Orientation="Horizontal" FlowDirection="{Binding Alignment, ElementName=root, Converter={StaticResource PinAlignmentToFlowDirectionConverter}}">
+                        <ProgressBar Width="60" Height="11" Margin="4,0,0,0" Visibility="{Binding ConfiguredAction, Converter={StaticResource PinActionDigitalToVisibilityConverter}}" Foreground="{Binding ConfiguredAction, Converter={StaticResource PinActionToStrokeConverter}}" Background="{StaticResource TinkerPinBackgroundSelected}" Value="{Binding ValuePercent}" />
+                        <TextBlock Margin="{Binding ConfiguredAction, Converter={StaticResource PinActionToTextMarginConverter}}" Width="30" VerticalAlignment="Center" FontSize="{Binding ConfiguredAction, Converter={StaticResource PinActionToFontSizeConverter}}" Text="{Binding ValueText}" />
+                    </StackPanel>
+                </Grid>
+            </Viewbox>
+        </Grid>
+    </Border>
+</UserControl>

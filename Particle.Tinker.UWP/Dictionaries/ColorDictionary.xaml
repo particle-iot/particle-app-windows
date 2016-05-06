@@ -1,0 +1,26 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <SolidColorBrush x:Key="ButtonBlue">#00BAEC</SolidColorBrush>
+    <SolidColorBrush x:Key="HeaderTransparency">#46000000</SolidColorBrush>
+    <SolidColorBrush x:Key="SliderBackground">#5B5B5B</SolidColorBrush>
+    <SolidColorBrush x:Key="ErrorRed">#FF0030</SolidColorBrush>
+    <SolidColorBrush x:Key="SuccessGreen">#2ECC71</SolidColorBrush>
+
+    <SolidColorBrush x:Key="OnlineDot">#2FCB6D</SolidColorBrush>
+    <SolidColorBrush x:Key="OnlineNonTinkerDot">#F1C40F</SolidColorBrush>
+    <SolidColorBrush x:Key="FlashingDot">#F000D2</SolidColorBrush>
+    <SolidColorBrush x:Key="OfflineDot">#E74C3C</SolidColorBrush>
+    <SolidColorBrush x:Key="UnknonwDot">#000000</SolidColorBrush>
+
+    <SolidColorBrush x:Key="Cyan">#00ACED</SolidColorBrush>
+    <SolidColorBrush x:Key="Emerald">#2ECC71</SolidColorBrush>
+    <SolidColorBrush x:Key="Sunflower">#F1C40F</SolidColorBrush>
+    <SolidColorBrush x:Key="Alizarin">#E74C3C</SolidColorBrush>
+    <SolidColorBrush x:Key="PinOrange">#ED9038</SolidColorBrush>
+
+    <SolidColorBrush x:Key="TinkerPinBackground">#4C000000</SolidColorBrush>
+    <SolidColorBrush x:Key="TinkerPinBackgroundSelected">#B2000000</SolidColorBrush>
+    <SolidColorBrush x:Key="TinkerPinErrorBackground">#B2FF0030</SolidColorBrush>
+</ResourceDictionary>

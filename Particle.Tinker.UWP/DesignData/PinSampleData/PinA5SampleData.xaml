@@ -1,0 +1,1 @@
+﻿<Tinker:Pin xmlns:Tinker="using:Particle.Tinker" ConfiguredAction="AnalogRead" Caption="A5" PinType="A" Value="949" ValuePercent="23.2" ValueText="949" ValueKnown="True" />

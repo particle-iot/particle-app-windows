@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Particle.Tinker.Windows", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Particle.Tinker.WindowsPhone", "Particle.Tinker.WindowsPhone\Particle.Tinker.WindowsPhone.csproj", "{EA1FE377-423E-41C9-BAF7-9A8952ED456C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Particle.Tinker.UWP", "Particle.Tinker.UWP\Particle.Tinker.UWP.csproj", "{138D4B34-382B-4DE5-BE95-87129C590390}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		Particle.Tinker.Shared\Particle.Tinker.Shared.projitems*{ea1fe377-423e-41c9-baf7-9a8952ed456c}*SharedItemsImports = 4
@@ -76,6 +78,27 @@ Global
 		{EA1FE377-423E-41C9-BAF7-9A8952ED456C}.Release|x86.ActiveCfg = Release|x86
 		{EA1FE377-423E-41C9-BAF7-9A8952ED456C}.Release|x86.Build.0 = Release|x86
 		{EA1FE377-423E-41C9-BAF7-9A8952ED456C}.Release|x86.Deploy.0 = Release|x86
+		{138D4B34-382B-4DE5-BE95-87129C590390}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{138D4B34-382B-4DE5-BE95-87129C590390}.Debug|Any CPU.Deploy.0 = Debug|x86
+		{138D4B34-382B-4DE5-BE95-87129C590390}.Debug|ARM.ActiveCfg = Debug|ARM
+		{138D4B34-382B-4DE5-BE95-87129C590390}.Debug|ARM.Build.0 = Debug|ARM
+		{138D4B34-382B-4DE5-BE95-87129C590390}.Debug|ARM.Deploy.0 = Debug|ARM
+		{138D4B34-382B-4DE5-BE95-87129C590390}.Debug|x64.ActiveCfg = Debug|x64
+		{138D4B34-382B-4DE5-BE95-87129C590390}.Debug|x64.Build.0 = Debug|x64
+		{138D4B34-382B-4DE5-BE95-87129C590390}.Debug|x64.Deploy.0 = Debug|x64
+		{138D4B34-382B-4DE5-BE95-87129C590390}.Debug|x86.ActiveCfg = Debug|x86
+		{138D4B34-382B-4DE5-BE95-87129C590390}.Debug|x86.Build.0 = Debug|x86
+		{138D4B34-382B-4DE5-BE95-87129C590390}.Debug|x86.Deploy.0 = Debug|x86
+		{138D4B34-382B-4DE5-BE95-87129C590390}.Release|Any CPU.ActiveCfg = Release|x86
+		{138D4B34-382B-4DE5-BE95-87129C590390}.Release|ARM.ActiveCfg = Release|ARM
+		{138D4B34-382B-4DE5-BE95-87129C590390}.Release|ARM.Build.0 = Release|ARM
+		{138D4B34-382B-4DE5-BE95-87129C590390}.Release|ARM.Deploy.0 = Release|ARM
+		{138D4B34-382B-4DE5-BE95-87129C590390}.Release|x64.ActiveCfg = Release|x64
+		{138D4B34-382B-4DE5-BE95-87129C590390}.Release|x64.Build.0 = Release|x64
+		{138D4B34-382B-4DE5-BE95-87129C590390}.Release|x64.Deploy.0 = Release|x64
+		{138D4B34-382B-4DE5-BE95-87129C590390}.Release|x86.ActiveCfg = Release|x86
+		{138D4B34-382B-4DE5-BE95-87129C590390}.Release|x86.Build.0 = Release|x86
+		{138D4B34-382B-4DE5-BE95-87129C590390}.Release|x86.Deploy.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
