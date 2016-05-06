@@ -1,0 +1,1 @@
+﻿<Tinker:Pin xmlns:Tinker="using:Particle.Tinker" ConfiguredAction="AnalogWriteDac" Caption="DAC" PinType="A" Value="140" ValuePercent="54.9" ValueText="140" ValueKnown="True" />

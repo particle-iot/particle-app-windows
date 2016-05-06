@@ -1,0 +1,98 @@
+﻿<ui:GenericPage
+    x:Class="Particle.Tinker.Pages.Device.VariablesPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:ui="using:Particle.UI"
+    xmlns:local="using:Particle.Tinker.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:converters="using:Particle.Tinker.Converters"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <converters:NameToNameConverter x:Key="NameToNameConverter" />
+        <converters:StringKeyValuePairConverter x:Key="StringKeyValuePairConverter" />
+    </Page.Resources>
+
+    <Grid x:Name="RootGrid" d:DataContext="{d:DesignData Source=/DesignData/VisibleBoundsWindowSampleData.xaml}">
+        <Grid.Background>
+            <ImageBrush ImageSource="/Assets/BackgroundTrianglify.png" />
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="{Binding StatusBarHeight}" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="{Binding NavigationBarHeight}" />
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0" Background="{StaticResource HeaderTransparency}" />
+        <Grid Grid.Row="1" x:Name="DataGrid" d:DataContext="{d:DesignData Source=/DesignData/ParticleDeviceSampleData.xaml}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="45" />
+                <RowDefinition Height="38" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Background="{StaticResource HeaderTransparency}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width=".04*" />
+                    <ColumnDefinition Width=".10*" />
+                    <ColumnDefinition Width=".72*" />
+                    <ColumnDefinition Width=".10*" />
+                    <ColumnDefinition Width=".04*" />
+                </Grid.ColumnDefinitions>
+                <Image Grid.Column="2" Margin="0,6" HorizontalAlignment="Center" Source="/Assets/Logos/LogoParticleHorizontal.png" />
+            </Grid>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width=".04*" />
+                    <ColumnDefinition Width=".82*" />
+                    <ColumnDefinition Width=".10*" />
+                    <ColumnDefinition Width=".04*" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="1" VerticalAlignment="Center" FontSize="24" FontWeight="SemiLight" TextTrimming="CharacterEllipsis" TextWrapping="NoWrap" Text="{Binding Name, Converter={StaticResource NameToNameConverter}}" />
+            </Grid>
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width=".04*" />
+                    <ColumnDefinition Width=".92*" />
+                    <ColumnDefinition Width=".04*" />
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="1">
+                    <TextBlock x:Uid="Variables" Margin="0,18" HorizontalAlignment="Center" Style="{StaticResource SubheaderTextBlockStyle}" Text="[Variables]" />
+                    <TextBlock x:Uid="VariableVariable" FontSize="16" Text="[Variable:]" />
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width=".63*" />
+                            <ColumnDefinition Width=".04*" />
+                            <ColumnDefinition Width=".23*" />
+                        </Grid.ColumnDefinitions>
+                        <ComboBox x:Name="VariablesComboBox" SelectionChanged="VariablesComboBox_SelectionChanged" ItemsSource="{Binding Variables}">
+                            <ComboBox.ItemContainerStyle>
+                                <Style TargetType="ComboBoxItem">
+                                    <Setter Property="HorizontalContentAlignment" Value="Stretch"></Setter>
+                                </Style>
+                            </ComboBox.ItemContainerStyle>
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width=".7*" />
+                                            <ColumnDefinition Width=".3*" />
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Grid.Column="0" Text="{Binding Converter={StaticResource StringKeyValuePairConverter}, ConverterParameter=key}" />
+                                        <TextBlock Grid.Column="1" Text="{Binding Converter={StaticResource StringKeyValuePairConverter}, ConverterParameter=value}" />
+                                    </Grid>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
+                        <Button x:Name="RefreshButton" x:Uid="ButtonRefresh" Grid.Column="2" MinWidth="0" HorizontalAlignment="Stretch" BorderThickness="0" Background="{StaticResource ButtonBlue}" Content="[REFRESH]" Click="RefreshButton_Click" />
+                    </Grid>
+                    <ProgressBar x:Name="Progress" Background="Transparent" />
+                    <TextBlock x:Uid="FunctionResult" Padding="0,10,0,0" FontSize="16" Text="[Result:]" />
+                    <TextBox x:Name="ResultTextBox" Grid.Column="0" IsReadOnly="true" />
+                    <Border x:Name="ErrorBorder" Margin="0,20,0,0" Padding="10" Background="#CCFFFFFF" BorderBrush="{StaticResource ErrorRed}" BorderThickness="5,0,0,0" Visibility="Collapsed">
+                        <TextBlock x:Name="ErrorText" Foreground="{StaticResource ErrorRed}" FontSize="20" />
+                    </Border>
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Grid>
+</ui:GenericPage>

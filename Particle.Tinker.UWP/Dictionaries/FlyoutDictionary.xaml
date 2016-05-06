@@ -1,0 +1,64 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ControlTemplate x:Key="RefreshButton" TargetType="Button">
+        <Border Margin="0" Padding="0" Background="Transparent">
+            <Image Margin="0,12" Source="/Assets/Icons/IconRefresh.png" />
+        </Border>
+    </ControlTemplate>
+
+    <Flyout x:Name="ReFlashTinkerFlyout">
+        <StackPanel Margin="20,11,20,20">
+            <TextBlock x:Uid="FlashTinkerQuestion" Style="{StaticResource MessageDialogHeaderStyle}" />
+            <Grid Margin="0,10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width=".43*" />
+                    <ColumnDefinition Width=".04*" />
+                    <ColumnDefinition Width=".43*" />
+                </Grid.ColumnDefinitions>
+                <Button x:Name="ReFlashTinkerButton" x:Uid="DialogButtonFlash" Grid.Column="0" HorizontalAlignment="Stretch" />
+                <Button x:Name="ReFlashCancelButton" x:Uid="DialogButtonCancel" Grid.Column="2" HorizontalAlignment="Stretch" />
+            </Grid>
+        </StackPanel>
+    </Flyout>
+
+    <Flyout x:Name="RenameDeviceFlyout">
+        <StackPanel Margin="20,11,20,20">
+            <TextBlock x:Uid="RenameDevice" Style="{StaticResource MessageDialogHeaderStyle}" />
+            <TextBlock x:Uid="RenameDeviceText" Margin="0,20" Style="{StaticResource MessageDialogTextStyle}" TextWrapping="Wrap" />
+            <Grid x:Name="NewDeviceNameGrid">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width=".90*" />
+                    <ColumnDefinition Width=".10*" />
+                </Grid.ColumnDefinitions>
+                <TextBox x:Name="NewDeviceName" Grid.Column="0" />
+                <Button x:Name="RefreshButton" Grid.Column="1" MinWidth="0" Margin="10,0,0,0" HorizontalAlignment="Center" Template="{StaticResource RefreshButton}" />
+            </Grid>
+            <Grid Margin="0,10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width=".43*" />
+                    <ColumnDefinition Width=".04*" />
+                    <ColumnDefinition Width=".43*" />
+                </Grid.ColumnDefinitions>
+                <Button x:Name="RenameDeviceButton" x:Uid="DialogButtonRename" Grid.Column="0" HorizontalAlignment="Stretch" />
+                <Button x:Name="RenameCancelButton" x:Uid="DialogButtonCancel" Grid.Column="2" HorizontalAlignment="Stretch" />
+            </Grid>
+        </StackPanel>
+    </Flyout>
+
+    <Flyout x:Name="UnclaimDeviceFlyout">
+        <StackPanel Margin="20,11,20,20">
+            <TextBlock x:Uid="UnclaimDeviceQuestion" Style="{StaticResource MessageDialogHeaderStyle}" />
+            <Grid Margin="0,10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width=".43*" />
+                    <ColumnDefinition Width=".04*" />
+                    <ColumnDefinition Width=".43*" />
+                </Grid.ColumnDefinitions>
+                <Button x:Name="UnclaimDeviceButton" x:Uid="DialogButtonUnclaim" Grid.Column="0" HorizontalAlignment="Stretch" />
+                <Button x:Name="UnclaimCancelButton" x:Uid="DialogButtonCancel" Grid.Column="2" HorizontalAlignment="Stretch" />
+            </Grid>
+        </StackPanel>
+    </Flyout>
+</ResourceDictionary>
