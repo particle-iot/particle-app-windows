@@ -1,4 +1,5 @@
-﻿using Windows.UI.Xaml.Navigation;
+﻿using Particle.Setup;
+using Windows.UI.Xaml.Navigation;
 
 namespace Particle.Tinker.Pages
 {
@@ -13,7 +14,9 @@ namespace Particle.Tinker.Pages
 
         protected override async void PostNavigatedTo(NavigationEventArgs e)
         {
-            if (e.NavigationMode == NavigationMode.Back)
+            if (SoftAP.SoftAPResult.ParticleDevice != null)
+                SoftAP.ResetSoftAPResult();
+            else if (e.NavigationMode == NavigationMode.Back)
                 return;
 
             await SetupTinkerAsync();
