@@ -39,7 +39,7 @@
                         <RowDefinition Height=".75*" />
                     </Grid.RowDefinitions>
                     <TextBlock x:Uid="ParticleLogin" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Bottom" Style="{StaticResource SubheaderTextBlockStyle}" Text="[Particle Login]" />
-                    <ScrollViewer Grid.Row="2">
+                    <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Auto">
                         <StackPanel>
                             <Grid>
                                 <TextBox x:Name="Token" x:Uid="TokenPlaceholder" Margin="0" Padding="10" PlaceholderText="[token]" KeyUp="TextBox_KeyUp" />

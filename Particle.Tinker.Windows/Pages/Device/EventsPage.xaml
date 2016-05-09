@@ -46,6 +46,7 @@
                     <ColumnDefinition Width=".10*" />
                     <ColumnDefinition Width=".04*" />
                 </Grid.ColumnDefinitions>
+                <Button Grid.Column="1" MinWidth="0" HorizontalAlignment="Left" Template="{StaticResource BackButton}" Click="BackButton_Click" />
                 <Image Grid.Column="2" Margin="0,6" HorizontalAlignment="Center" Source="/Assets/Logos/LogoParticleHorizontal.png" />
             </Grid>
             <Grid Grid.Row="1">

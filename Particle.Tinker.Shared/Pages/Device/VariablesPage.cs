@@ -18,6 +18,12 @@ namespace Particle.Tinker.Pages.Device
 
         #region Interaction Methods
 
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (Frame.CanGoBack)
+                Frame.GoBack();
+        }
+
         private async void RefreshButton_Click(object sender, RoutedEventArgs e)
         {
             SetEnableState(false);

@@ -17,6 +17,12 @@ namespace Particle.Tinker.Pages.Device
 
         #region Interaction Methods
 
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (Frame.CanGoBack)
+                Frame.GoBack();
+        }
+
         private void FunctionListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var startupVariableData = new TinkerPageStartupVariableData();

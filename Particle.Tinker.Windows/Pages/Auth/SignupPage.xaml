@@ -39,7 +39,7 @@
                         <RowDefinition Height=".75*" />
                     </Grid.RowDefinitions>
                     <TextBlock x:Uid="CreateParticleAccount" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Bottom" Style="{StaticResource SubheaderTextBlockStyle}" Text="[Create Particle account]" />
-                    <ScrollViewer Grid.Row="2">
+                    <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Auto">
                         <StackPanel>
                             <Grid>
                                 <TextBox x:Name="Email" x:Uid="EmailPlaceholder" Margin="0" Padding="10" PlaceholderText="[email]" InputScope="EmailSmtpAddress" KeyUp="TextBox_KeyUp" />
