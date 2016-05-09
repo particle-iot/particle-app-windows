@@ -286,7 +286,7 @@ namespace Particle.Tinker
         {
             List<Pin> allPins = new List<Pin>();
 
-            switch (particleDevice.ProductId)
+            switch (particleDevice.PlatformId)
             {
                 case ParticleDeviceType.Core:
                     allPins.Add(new Pin("TinkerA7", PinType.A, "A7", AllFunctions));

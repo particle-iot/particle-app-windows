@@ -16,7 +16,7 @@
         <converters:OnlyShowForCoreConverter x:Key="OnlyShowForCoreConverter" />
         <converters:OnlyShowForElectronConverter x:Key="OnlyShowForElectronConverter" />
         <converters:OnlyShowForPhotonConverter x:Key="OnlyShowForPhotonConverter" />
-        <converters:ProductIdToImageConverter x:Key="ProductIdToImageConverter" />
+        <converters:PlatformIdToImageConverter x:Key="PlatformIdToImageConverter" />
         <converters:StateToColorOrStringConverter x:Key="StateToColorOrStringConverter" />
         <converters:StateToEmtyListConverter x:Key="StateToEmtyListConverter" />
         <converters:StringFormatConverter x:Key="StringFormatConverter" />
@@ -77,7 +77,7 @@
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="auto" />
                             </Grid.RowDefinitions>
-                            <Image Grid.Column="0" VerticalAlignment="Top" Source="{Binding ProductId, Converter={StaticResource ProductIdToImageConverter}}" />
+                            <Image Grid.Column="0" VerticalAlignment="Top" Source="{Binding PlatformId, Converter={StaticResource PlatformIdToImageConverter}}" />
                             <Grid Grid.Column="2">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="auto" />
@@ -103,17 +103,17 @@
                                 <TextBlock Grid.Column="2" Grid.Row="2" FontSize="16" Text="{Binding LastHeard}" />
                                 <TextBlock x:Uid="InfoConnection" Grid.Column="0" Grid.Row="3" FontSize="16" Text="[Connection:]" />
                                 <TextBlock Grid.Column="2" Grid.Row="3" FontSize="16" Text="{Binding Cellular, Converter={StaticResource CellularToConnectionConverter}}" />
-                                <TextBlock Grid.Column="0" Grid.Row="4" FontSize="16" Visibility="{Binding ProductId, Converter={StaticResource OnlyShowForCoreConverter}}" Text="CC3000:" />
-                                <TextBlock Grid.Column="2" Grid.Row="4" FontSize="16" Visibility="{Binding ProductId, Converter={StaticResource OnlyShowForCoreConverter}}" Text="{Binding CC3000PatchVersion}" />
-                                <TextBlock x:Uid="InfoMbsUsed" Grid.Column="0" Grid.Row="4" FontSize="16" Visibility="{Binding ProductId, Converter={StaticResource OnlyShowForElectronConverter}}" Text="[Mbs Used:]" />
-                                <TextBlock Grid.Column="2" Grid.Row="4" FontSize="16" Visibility="{Binding ProductId, Converter={StaticResource OnlyShowForElectronConverter}}" Text="{Binding MbsUsed}" />
+                                <TextBlock Grid.Column="0" Grid.Row="4" FontSize="16" Visibility="{Binding PlatformId, Converter={StaticResource OnlyShowForCoreConverter}}" Text="CC3000:" />
+                                <TextBlock Grid.Column="2" Grid.Row="4" FontSize="16" Visibility="{Binding PlatformId, Converter={StaticResource OnlyShowForCoreConverter}}" Text="{Binding CC3000PatchVersion}" />
+                                <TextBlock x:Uid="InfoMbsUsed" Grid.Column="0" Grid.Row="4" FontSize="16" Visibility="{Binding PlatformId, Converter={StaticResource OnlyShowForElectronConverter}}" Text="[Mbs Used:]" />
+                                <TextBlock Grid.Column="2" Grid.Row="4" FontSize="16" Visibility="{Binding PlatformId, Converter={StaticResource OnlyShowForElectronConverter}}" Text="{Binding MbsUsed}" />
                             </Grid>
                         </Grid>
                         <TextBlock x:Uid="InfoId" Padding="0,10,0,0" FontSize="16" Text="[Id:]" />
                         <TextBox IsReadOnly="True" Text="{Binding Id}" />
                         <TextBlock x:Uid="InfoIPAddress" Padding="0,10,0,0" FontSize="16" Text="[IP Address:]" />
                         <TextBox IsReadOnly="True" Text="{Binding LastIPAddress}" />
-                        <StackPanel Visibility="{Binding ProductId, Converter={StaticResource OnlyShowForElectronConverter}}">
+                        <StackPanel Visibility="{Binding PlatformId, Converter={StaticResource OnlyShowForElectronConverter}}">
                             <TextBlock Padding="0,10,0,0" FontSize="16" Text="ICCID:" />
                             <TextBox IsReadOnly="True" Text="{Binding LastICCID}" />
                             <TextBlock Padding="0,10,0,0" FontSize="16" Text="IMEI:" />

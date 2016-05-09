@@ -17,7 +17,7 @@
             </ResourceDictionary.MergedDictionaries>
 
             <converters:NameToNameConverter x:Key="NameToNameConverter" />
-            <converters:ProductIdToImageConverter x:Key="ProductIdToImageConverter" />
+            <converters:PlatformIdToImageConverter x:Key="PlatformIdToImageConverter" />
             <converters:StateToColorOrStringConverter x:Key="StateToColorOrStringConverter" />
             <converters:StringToUppercaseConverter x:Key="StringToUppercaseConverter" />
 
@@ -132,7 +132,7 @@
                                     <ColumnDefinition Width=".02*" />
                                     <ColumnDefinition Width=".08*" />
                                 </Grid.ColumnDefinitions>
-                                <Image Grid.Column="1" Margin="14,14" Source="{Binding ProductId, Converter={StaticResource ProductIdToImageConverter}}" />
+                                <Image Grid.Column="1" Margin="14,14" Source="{Binding PlatformId, Converter={StaticResource PlatformIdToImageConverter}}" />
                                 <StackPanel Grid.Column="2" Margin="0,14">
                                     <TextBlock FontSize="18" Text="{Binding Name, Converter={StaticResource NameToNameConverter}}" />
                                     <Grid>

@@ -119,7 +119,7 @@ namespace Particle.Tinker.Converters
         }
     }
 
-    public class ProductIdToImageConverter : IValueConverter
+    public class PlatformIdToImageConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, string language)
         {
