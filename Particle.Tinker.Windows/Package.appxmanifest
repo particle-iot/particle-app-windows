@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest">
-  <Identity Name="30c9a26b-e085-4434-971e-44e4afcf86d5" Publisher="CN=JustinM" Version="1.0.0.0" />
+  <Identity Name="Particle.Particle" Publisher="CN=JustinM" Version="0.0.5.0" />
   <Properties>
-    <DisplayName>Particle.Tinker.Windows</DisplayName>
-    <PublisherDisplayName>JustinM</PublisherDisplayName>
+    <DisplayName>Particle</DisplayName>
+    <PublisherDisplayName>Particle Industries, Inc</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
   <Prerequisites>
