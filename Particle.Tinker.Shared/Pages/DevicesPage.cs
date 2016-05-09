@@ -117,6 +117,12 @@ namespace Particle.Tinker.Pages
             ShowDeviceMenu(sender);
         }
 
+        private void DeviceListBoxItem_RightTapped(object sender, RightTappedRoutedEventArgs e)
+        {
+            e.Handled = true;
+            ShowDeviceMenu(sender);
+        }
+
         private void DeviceOfflineOkButton_Click(object sender, RoutedEventArgs e)
         {
             DeviceOfflineFlyout.Hide();
@@ -162,11 +168,6 @@ namespace Particle.Tinker.Pages
         private async void RefreshAppBarButton_Click(object sender, RoutedEventArgs e)
         {
             await LoadDevicesAsync();
-        }
-
-        private void ShowDeviceMenuButton_Click(object sender, RoutedEventArgs e)
-        {
-            ShowDeviceMenu(sender);
         }
 
         #endregion

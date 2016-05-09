@@ -21,16 +21,6 @@
             <converters:StateToColorOrStringConverter x:Key="StateToColorOrStringConverter" />
             <converters:StringToUppercaseConverter x:Key="StringToUppercaseConverter" />
 
-            <ControlTemplate x:Key="MenuButton" TargetType="Button">
-                <Border Padding="10,30" Background="Transparent" VerticalAlignment="Center">
-                    <StackPanel>
-                        <Ellipse Width="7" Height="7" Margin="1.5" Fill="{StaticResource Cyan}" />
-                        <Ellipse Width="7" Height="7" Margin="1.5" Fill="{StaticResource Cyan}" />
-                        <Ellipse Width="7" Height="7" Margin="1.5" Fill="{StaticResource Cyan}" />
-                    </StackPanel>
-                </Border>
-            </ControlTemplate>
-
             <MenuFlyout x:Key="DeviceFlyout">
                 <MenuFlyoutItem x:Uid="Rename" Click="AskRenameDeviceButton_Click" />
                 <MenuFlyoutItem x:Uid="Info" Click="DeviceInfoButton_Click" />
@@ -124,18 +114,22 @@
                     </controls:AlternatingRowListView.ItemContainerStyle>
                     <controls:AlternatingRowListView.ItemTemplate>
                         <DataTemplate>
-                            <Grid IsHoldingEnabled="True" Holding="DeviceListBoxItem_Holding">
+                            <Grid Background="Transparent" IsHitTestVisible="True" IsHoldingEnabled="True" Holding="DeviceListBoxItem_Holding" RightTapped="DeviceListBoxItem_RightTapped">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width=".02*" />
                                     <ColumnDefinition Width=".16*" />
-                                    <ColumnDefinition Width=".72*" />
-                                    <ColumnDefinition Width=".02*" />
-                                    <ColumnDefinition Width=".08*" />
+                                    <ColumnDefinition Width=".78*" />
+                                    <ColumnDefinition Width=".04*" />
                                 </Grid.ColumnDefinitions>
                                 <Image Grid.Column="1" Margin="14,14" Source="{Binding PlatformId, Converter={StaticResource PlatformIdToImageConverter}}" />
-                                <StackPanel Grid.Column="2" Margin="0,14">
-                                    <TextBlock FontSize="18" Text="{Binding Name, Converter={StaticResource NameToNameConverter}}" />
-                                    <Grid>
+                                <Grid Grid.Column="2" Margin="0,14">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height=".1*" />
+                                        <RowDefinition Height=".1*" />
+                                        <RowDefinition Height=".1*" />
+                                    </Grid.RowDefinitions>
+                                    <TextBlock Grid.Row="0" FontSize="18" Text="{Binding Name, Converter={StaticResource NameToNameConverter}}" />
+                                    <Grid Grid.Row="1">
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="Auto" />
                                             <ColumnDefinition Width="*" />
@@ -147,9 +141,8 @@
                                             <Ellipse Width="22" Height="22" Margin="10,0,0,0" Fill="{Binding State, Converter={StaticResource StateToColorOrStringConverter}}" />
                                         </StackPanel>
                                     </Grid>
-                                    <TextBlock FontSize="16" Text="{Binding Id, Converter={StaticResource StringToUppercaseConverter}}" />
-                                </StackPanel>
-                                <Button Grid.Column="4" MinWidth="0" Template="{StaticResource MenuButton}" Click="ShowDeviceMenuButton_Click" />
+                                    <TextBlock Grid.Row="2" FontSize="16" Text="{Binding Id, Converter={StaticResource StringToUppercaseConverter}}" />
+                                </Grid>
                             </Grid>
                         </DataTemplate>
                     </controls:AlternatingRowListView.ItemTemplate>
