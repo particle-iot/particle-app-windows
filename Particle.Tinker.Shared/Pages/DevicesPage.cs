@@ -195,6 +195,13 @@ namespace Particle.Tinker.Pages
             return null;
         }
 
+        private void SoftAPSettings_OnSoftAPExit()
+        {
+#if WINDOWS_PHONE_APP
+            Windows.Phone.UI.Input.HardwareButtons.BackPressed -= hardwareButtonsBackPressed;
+#endif
+        }
+
         private void LaunchSoftAP()
         {
             UI.WindowsRuntimeResourceManager.InjectIntoResxGeneratedApplicationResourcesClass(typeof(Particle.Setup.SetupResources));
@@ -204,22 +211,12 @@ namespace Particle.Tinker.Pages
             softAPSettings.CompletionPageType = GetType();
             softAPSettings.Username = TinkerData.Username;
             softAPSettings.CurrentDeviceNames = TinkerData.GetDeviceNames();
+            softAPSettings.OnSoftAPExit += SoftAPSettings_OnSoftAPExit;
 
 #if WINDOWS_PHONE_APP
             hardwareButtonsBackPressed = new EventHandler<Windows.Phone.UI.Input.BackPressedEventArgs>(delegate (object sender, Windows.Phone.UI.Input.BackPressedEventArgs e)
             {
-                if (SoftAP.SoftAPResult.Result != SoftAPSetupResult.Started)
-                {
-                    Windows.Phone.UI.Input.HardwareButtons.BackPressed -= hardwareButtonsBackPressed;
-                    if (SoftAP.SoftAPResult.Result != SoftAPSetupResult.NotStarted)
-                        return;
-                }
-
-                if (Frame.CanGoBack)
-                {
-                    e.Handled = true;
-                    Frame.GoBack();
-                }
+                e.Handled = SoftAP.BackButtonPressed();
             });
 
             Windows.Phone.UI.Input.HardwareButtons.BackPressed += hardwareButtonsBackPressed;
