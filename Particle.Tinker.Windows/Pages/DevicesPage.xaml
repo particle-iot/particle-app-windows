@@ -76,7 +76,7 @@
                 </StackPanel>
             </Flyout>
 
-            <MenuFlyout x:Name="AddFlyout">
+            <MenuFlyout x:Name="AddFlyout" Placement="Bottom">
                 <MenuFlyoutItem x:Uid="Photon" Click="AddPhotonButton_Click" />
                 <MenuFlyoutItem x:Uid="Electron" Click="AddElectronButton_Click" />
             </MenuFlyout>
@@ -149,7 +149,7 @@
                                     </Grid>
                                     <TextBlock FontSize="16" Text="{Binding Id, Converter={StaticResource StringToUppercaseConverter}}" />
                                 </StackPanel>
-                                <Button Grid.Column="4" MinWidth="0" Template="{StaticResource MenuButton}" Flyout="{StaticResource DeviceFlyout}" />
+                                <Button Grid.Column="4" MinWidth="0" Template="{StaticResource MenuButton}" Click="ShowDeviceMenuButton_Click" />
                             </Grid>
                         </DataTemplate>
                     </controls:AlternatingRowListView.ItemTemplate>

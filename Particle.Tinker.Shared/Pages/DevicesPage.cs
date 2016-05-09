@@ -5,7 +5,6 @@ using Particle.Tinker.Pages.Device;
 using System;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Reflection;
 using System.Threading.Tasks;
 using Windows.System;
 using Windows.UI.Xaml;
@@ -44,7 +43,8 @@ namespace Particle.Tinker.Pages
 
         private void AddAppBarButton_Click(object sender, RoutedEventArgs e)
         {
-            AddFlyout.ShowAt(DevicesCommandBar);
+            AdjustFlyoutMargin(AddFlyout);
+            AddFlyout.ShowAt(DeviceListBox);
         }
 
         private void AddElectronButton_Click(object sender, RoutedEventArgs e)
@@ -114,11 +114,7 @@ namespace Particle.Tinker.Pages
 
         private void DeviceListBoxItem_Holding(object sender, HoldingRoutedEventArgs e)
         {
-            var senderElement = sender as FrameworkElement;
-            var particleDevice = (ParticleDevice)senderElement.DataContext;
-
-            var deviceFlyout = (MenuFlyout)Resources["DeviceFlyout"];
-            deviceFlyout.ShowAt(senderElement);
+            ShowDeviceMenu(sender);
         }
 
         private void DeviceOfflineOkButton_Click(object sender, RoutedEventArgs e)
@@ -168,9 +164,20 @@ namespace Particle.Tinker.Pages
             await LoadDevicesAsync();
         }
 
+        private void ShowDeviceMenuButton_Click(object sender, RoutedEventArgs e)
+        {
+            ShowDeviceMenu(sender);
+        }
+
         #endregion
 
         #region Private Methods
+
+        private void AdjustFlyoutMargin(MenuFlyout menuFlyout)
+        {
+            var lastItem = menuFlyout.Items.Last();
+            lastItem.Margin = new Thickness(0, 0, 0, UI.VisibleBoundsWindow.VisibleBounds.NavigationBarHeight.Value);
+        }
 
         private ParticleDevice GetParticleDeviceFromControl(object sender)
         {
@@ -244,6 +251,17 @@ namespace Particle.Tinker.Pages
         {
             ParticleCloud.SharedCloud.ClientUnauthorized += ParticleCloud_ClientUnauthorized;
             await LoadDevicesAsync();
+        }
+
+        private void ShowDeviceMenu(object sender)
+        {
+            var senderElement = sender as FrameworkElement;
+            var particleDevice = (ParticleDevice)senderElement.DataContext;
+
+            var deviceFlyout = (MenuFlyout)Resources["DeviceFlyout"];
+            AdjustFlyoutMargin(deviceFlyout);
+
+            deviceFlyout.ShowAt(senderElement);
         }
 
         #endregion
