@@ -195,13 +195,6 @@ namespace Particle.Tinker.Pages
             return null;
         }
 
-        private void SoftAPSettings_OnSoftAPExit()
-        {
-#if WINDOWS_PHONE_APP
-            Windows.Phone.UI.Input.HardwareButtons.BackPressed -= hardwareButtonsBackPressed;
-#endif
-        }
-
         private void LaunchSoftAP()
         {
             UI.WindowsRuntimeResourceManager.InjectIntoResxGeneratedApplicationResourcesClass(typeof(Particle.Setup.SetupResources));
@@ -264,6 +257,13 @@ namespace Particle.Tinker.Pages
             AdjustFlyoutMargin(deviceFlyout);
 
             deviceFlyout.ShowAt(senderElement);
+        }
+
+        private void SoftAPSettings_OnSoftAPExit()
+        {
+#if WINDOWS_PHONE_APP
+            Windows.Phone.UI.Input.HardwareButtons.BackPressed -= hardwareButtonsBackPressed;
+#endif
         }
 
         #endregion
