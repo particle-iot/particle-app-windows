@@ -257,6 +257,10 @@ namespace Particle.Tinker.Pages
             var particleDevice = (ParticleDevice)senderElement.DataContext;
 
             var deviceFlyout = (MenuFlyout)Resources["DeviceFlyout"];
+
+            var reFlashTinkerMenuButton = (MenuFlyoutItem)FindName("ReFlashTinkerMenuButton");
+            reFlashTinkerMenuButton.Visibility = TinkerData.CanFlashTinker(particleDevice) ? Visibility.Visible : Visibility.Collapsed;
+
             AdjustFlyoutMargin(deviceFlyout);
 
             deviceFlyout.ShowAt(senderElement);

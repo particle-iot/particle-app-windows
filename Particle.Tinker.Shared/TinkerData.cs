@@ -83,6 +83,20 @@ namespace Particle.Tinker
 
         #region Public Methods
 
+        public static bool CanFlashTinker(ParticleDevice particleDevice)
+        {
+            switch (particleDevice.ProductId)
+            {
+                case ParticleDeviceType.Core:
+                case ParticleDeviceType.Photon:
+                case ParticleDeviceType.P1:
+                case ParticleDeviceType.Electron:
+                    return true;
+                default:
+                    return false;
+            }
+        }
+
         public static HashSet<string> GetDeviceNames()
         {
             if (deviceNames == null)

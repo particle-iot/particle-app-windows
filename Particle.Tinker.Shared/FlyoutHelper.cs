@@ -1,6 +1,7 @@
 ﻿using Particle.SDK;
 using Particle.SDK.Utils;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using Windows.Storage;
 using Windows.UI.Xaml;
@@ -32,10 +33,17 @@ namespace Particle.Tinker
                         await particleDevice.FlashKnownAppAsync("tinker");
                         break;
                     case ParticleDeviceType.Photon:
-                    case ParticleDeviceType.P1:
                         {
                             StorageFolder installationFolder = Windows.ApplicationModel.Package.Current.InstalledLocation;
                             StorageFile firmwareFile = await installationFolder.GetFileAsync("Firmware\\PhotonTinker.bin");
+                            Stream firmwareStream = await firmwareFile.OpenStreamForReadAsync();
+                            await particleDevice.FlashBinaryAsync(firmwareStream, "tinker.bin");
+                        }
+                        break;
+                    case ParticleDeviceType.P1:
+                        {
+                            StorageFolder installationFolder = Windows.ApplicationModel.Package.Current.InstalledLocation;
+                            StorageFile firmwareFile = await installationFolder.GetFileAsync("Firmware\\P1Tinker.bin");
                             Stream firmwareStream = await firmwareFile.OpenStreamForReadAsync();
                             await particleDevice.FlashBinaryAsync(firmwareStream, "tinker.bin");
                         }
@@ -171,6 +179,28 @@ namespace Particle.Tinker
             }
 
             return foundChild;
+        }
+
+        public static List<T> FindTypeInContainer<T>(DependencyObject container)
+        {
+            List<T> foundChildren = new List<T>();
+
+            int count = VisualTreeHelper.GetChildrenCount(container);
+            for (int i = 0; i < count; i++)
+            {
+                var child = (FrameworkElement)VisualTreeHelper.GetChild(container, i);
+
+                if (child == null)
+                    continue;
+
+                if (child is T)
+                    foundChildren.Add((T)(object)child);
+
+                var subFoundChildren = FindTypeInContainer<T>(child);
+                    foundChildren.AddRange(subFoundChildren);
+            }
+
+            return foundChildren;
         }
     }
 }

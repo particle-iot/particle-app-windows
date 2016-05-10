@@ -90,6 +90,17 @@ namespace Particle.Tinker.Pages.Device
             Frame.Navigate(typeof(EventsPage), particleDevice);
         }
 
+        private void MoreButton_Click(object sender, RoutedEventArgs e)
+        {
+            var senderElement = sender as FrameworkElement;
+            var particleDevice = (ParticleDevice)senderElement.DataContext;
+
+            var reFlashTinkerMenuButton = (MenuFlyoutItem)FindName("ReFlashTinkerMenuButton");
+            reFlashTinkerMenuButton.Visibility = TinkerData.CanFlashTinker(particleDevice) ? Visibility.Visible : Visibility.Collapsed;
+
+            DeviceFlyout.ShowAt(senderElement);
+        }
+
         private void PinButton_Holding(object sender, HoldingRoutedEventArgs e)
         {
             var pinButton = (PinButton)sender;
@@ -239,6 +250,13 @@ namespace Particle.Tinker.Pages.Device
 
                 if (pin.PinType == PinType.B || pin.PinType == PinType.C)
                     LowerPinGrid.Visibility = Visibility.Visible;
+            }
+
+            var pinButtons = FlyoutHelper.FindTypeInContainer<PinButton>((DependencyObject)PinScrollViewer.Content);
+            foreach (var pinButton in pinButtons)
+            {
+                if (pinButton.DataContext.GetType() != typeof(Pin))
+                    pinButton.Visibility = Visibility.Collapsed;
             }
         }
 

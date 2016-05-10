@@ -25,7 +25,7 @@
                 <MenuFlyoutItem x:Uid="Rename" Click="AskRenameDeviceButton_Click" />
                 <MenuFlyoutItem x:Uid="Info" Click="DeviceInfoButton_Click" />
                 <MenuFlyoutItem x:Uid="Events" Click="EventsButton_Click" />
-                <MenuFlyoutItem x:Uid="ReFlashTinker" Click="AskReFlashTinkerButton_Click" />
+                <MenuFlyoutItem x:Name="ReFlashTinkerMenuButton" x:Uid="ReFlashTinker" Click="AskReFlashTinkerButton_Click" />
                 <MenuFlyoutItem x:Uid="Unclaim" Click="AskUnclaimDeviceButton_Click" />
             </MenuFlyout>
 

@@ -89,4 +89,7 @@
   <ItemGroup>
     <Content Include="$(MSBuildThisFileDirectory)Firmware\ElectronTinker.bin" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="$(MSBuildThisFileDirectory)Firmware\P1Tinker.bin" />
+  </ItemGroup>
 </Project>

@@ -328,6 +328,7 @@ namespace Particle.Tinker
                     allPins.Add(new Pin("TinkerD2", PinType.D, "D2", NoAnalogRead));
                     allPins.Add(new Pin("TinkerD1", PinType.D, "D1", NoAnalogRead));
                     allPins.Add(new Pin("TinkerD0", PinType.D, "D0", NoAnalogRead));
+
                     break;
 
                 case ParticleDeviceType.Electron:

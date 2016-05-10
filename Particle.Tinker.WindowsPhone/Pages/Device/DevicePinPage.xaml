@@ -19,10 +19,10 @@
 
             <converters:NameToNameConverter x:Key="NameToNameConverter" />
 
-            <MenuFlyout x:Key="DeviceFlyout">
+            <MenuFlyout x:Name="DeviceFlyout">
                 <MenuFlyoutItem x:Uid="Info" Click="DeviceInfoButton_Click" />
                 <MenuFlyoutItem x:Uid="Events" Click="EventsButton_Click" />
-                <MenuFlyoutItem x:Uid="ReFlashTinker" Click="AskReFlashTinkerButton_Click" />
+                <MenuFlyoutItem x:Name="ReFlashTinkerMenuButton" x:Uid="ReFlashTinker" Click="AskReFlashTinkerButton_Click" />
                 <MenuFlyoutItem x:Uid="Unclaim" Click="AskUnclaimDeviceButton_Click" />
                 <MenuFlyoutItem x:Uid="ClearTinker" Click="ResetAllPins_Click" />
                 <MenuFlyoutItem x:Uid="Documentation" Click="Documentation_Click" />
@@ -113,7 +113,7 @@
                 </Grid.ColumnDefinitions>
                 <Button Grid.Column="1" MinWidth="0" HorizontalAlignment="Left" Template="{StaticResource BackButton}" Click="BackButton_Click" />
                 <Image Grid.Column="2" Margin="0,6" HorizontalAlignment="Center" Source="/Assets/Logos/LogoParticleHorizontal.png" />
-                <Button x:Name="MoreButton" Grid.Column="3" MinWidth="0" HorizontalAlignment="Right" Template="{StaticResource MoreButton}" Flyout="{StaticResource DeviceFlyout}" />
+                <Button x:Name="MoreButton" Grid.Column="3" MinWidth="0" HorizontalAlignment="Right" Template="{StaticResource MoreButton}" Click="MoreButton_Click" />
             </Grid>
             <Grid Grid.Row="1">
                 <Grid.ColumnDefinitions>
