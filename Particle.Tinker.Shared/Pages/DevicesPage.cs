@@ -1,4 +1,5 @@
 ﻿using Particle.SDK;
+using Particle.SDK.Models;
 using Particle.Setup;
 using Particle.Setup.Models;
 using Particle.Tinker.Pages.Device;
@@ -17,9 +18,11 @@ namespace Particle.Tinker.Pages
     {
         #region Private Members
 
+        Guid? sparkEventListenerID = null;
+
  #if WINDOWS_PHONE_APP
         private EventHandler<Windows.Phone.UI.Input.BackPressedEventArgs> hardwareButtonsBackPressed = null;
- #else
+#else
         private object hardwareButtonsBackPressed;
  #endif
 
@@ -229,6 +232,9 @@ namespace Particle.Tinker.Pages
                 var sortedDevices = devices.OrderByDescending(device => device.Connected).ThenBy(device => device.Name).ToList();
                 TinkerData.Devices = new ObservableCollection<ParticleDevice>(sortedDevices);
                 DeviceListBox.DataContext = TinkerData.Devices;
+
+                if (sparkEventListenerID == null)
+                    sparkEventListenerID = await ParticleCloud.SharedCloud.SubscribeToDevicesEventsWithPrefixAsync(SparkMessages, "spark");
             }
             catch
             {
@@ -265,6 +271,38 @@ namespace Particle.Tinker.Pages
 #if WINDOWS_PHONE_APP
             Windows.Phone.UI.Input.HardwareButtons.BackPressed -= hardwareButtonsBackPressed;
 #endif
+        }
+
+        private async void SparkMessages(object sender, ParticleEventResponse particeEvent)
+        {
+            var particleDevice = TinkerData.Devices.FirstOrDefault(device => device.Id == particeEvent.DeviceId);
+            if (particleDevice == null)
+                return;
+
+            switch (particeEvent.Name)
+            {
+                case "spark/status":
+                    if (particleDevice.IsFlashing && particeEvent.Data.Equals("online"))
+                        particleDevice.ExternalFlashDetected(true);
+
+                    await particleDevice.RefreshAsync();
+
+                    var sortedDevices = TinkerData.Devices.OrderByDescending(device => device.Connected).ThenBy(device => device.Name).ToList();
+                    var newIndex = TinkerData.Devices.IndexOf(particleDevice);
+                    var oldIndex = sortedDevices.IndexOf(particleDevice);
+                    if (newIndex != oldIndex)
+                    {
+                        TinkerData.Devices.Remove(particleDevice);
+                        TinkerData.Devices.Insert(newIndex, particleDevice);
+                    }
+                    break;
+
+                case "spark/flash/status":
+                    if (particeEvent.Data.StartsWith("started"))
+                        particleDevice.ExternalFlashDetected();
+
+                    break;
+            }
         }
 
         #endregion

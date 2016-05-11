@@ -30,14 +30,14 @@ namespace Particle.Tinker
                 switch (particleDevice.KnownProductId)
                 {
                     case ParticleDeviceType.ParticleCore:
-                        await particleDevice.FlashKnownAppAsync("tinker");
+                        await particleDevice.FlashKnownAppAsync("tinker", false);
                         break;
                     case ParticleDeviceType.ParticlePhoton:
                         {
                             StorageFolder installationFolder = Windows.ApplicationModel.Package.Current.InstalledLocation;
                             StorageFile firmwareFile = await installationFolder.GetFileAsync("Firmware\\PhotonTinker.bin");
                             Stream firmwareStream = await firmwareFile.OpenStreamForReadAsync();
-                            await particleDevice.FlashBinaryAsync(firmwareStream, "tinker.bin");
+                            await particleDevice.FlashBinaryAsync(firmwareStream, "tinker.bin", false);
                         }
                         break;
                     case ParticleDeviceType.ParticleP1:
@@ -45,7 +45,7 @@ namespace Particle.Tinker
                             StorageFolder installationFolder = Windows.ApplicationModel.Package.Current.InstalledLocation;
                             StorageFile firmwareFile = await installationFolder.GetFileAsync("Firmware\\P1Tinker.bin");
                             Stream firmwareStream = await firmwareFile.OpenStreamForReadAsync();
-                            await particleDevice.FlashBinaryAsync(firmwareStream, "tinker.bin");
+                            await particleDevice.FlashBinaryAsync(firmwareStream, "tinker.bin", false);
                         }
                         break;
                     case ParticleDeviceType.ParticleElectron:
@@ -54,7 +54,7 @@ namespace Particle.Tinker
                             StorageFolder installationFolder = Windows.ApplicationModel.Package.Current.InstalledLocation;
                             StorageFile firmwareFile = await installationFolder.GetFileAsync("Firmware\\ElectronTinker.bin");
                             Stream firmwareStream = await firmwareFile.OpenStreamForReadAsync();
-                            await particleDevice.FlashBinaryAsync(firmwareStream, "tinker.bin");
+                            await particleDevice.FlashBinaryAsync(firmwareStream, "tinker.bin", false);
                         }
                         break;
                 }
