@@ -1,7 +1,6 @@
 ﻿using Particle.SDK;
 using Particle.SDK.Models;
 using Particle.Setup;
-using Particle.Setup.Models;
 using Particle.Tinker.Pages.Device;
 using System;
 using System.Collections.ObjectModel;
@@ -20,11 +19,9 @@ namespace Particle.Tinker.Pages
 
         Guid? sparkEventListenerID = null;
 
- #if WINDOWS_PHONE_APP
+#if WINDOWS_PHONE_APP
         private EventHandler<Windows.Phone.UI.Input.BackPressedEventArgs> hardwareButtonsBackPressed = null;
-#else
-        private object hardwareButtonsBackPressed;
- #endif
+#endif
 
         #endregion
 
