@@ -226,7 +226,8 @@ namespace Particle.Tinker.Pages
             try
             {
                 var devices = await ParticleCloud.SharedCloud.GetDevicesAsync();
-                TinkerData.Devices = new ObservableCollection<ParticleDevice>(devices);
+                var sortedDevices = devices.OrderByDescending(device => device.Connected).ThenBy(device => device.Name).ToList();
+                TinkerData.Devices = new ObservableCollection<ParticleDevice>(sortedDevices);
                 DeviceListBox.DataContext = TinkerData.Devices;
             }
             catch
