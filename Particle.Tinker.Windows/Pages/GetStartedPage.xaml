@@ -40,9 +40,9 @@
                     <ColumnDefinition Width=".4*" />
                     <ColumnDefinition Width=".3*" />
                 </Grid.ColumnDefinitions>
-                <Image Grid.Column="0" VerticalAlignment="Bottom" Source="/Assets/Prototypes/PrototypePhoton.png" />
-                <Image Grid.Column="1" VerticalAlignment="Bottom" Source="/Assets/Prototypes/PrototypeElectron.png" />
-                <Image Grid.Column="2" VerticalAlignment="Bottom" Source="/Assets/Prototypes/PrototypeCore.png" />
+                <Image Grid.Column="0" VerticalAlignment="Bottom" Source="/Assets/Prototypes/PrototypeParticlePhoton.png" />
+                <Image Grid.Column="1" VerticalAlignment="Bottom" Source="/Assets/Prototypes/PrototypeParticleElectron.png" />
+                <Image Grid.Column="2" VerticalAlignment="Bottom" Source="/Assets/Prototypes/PrototypeParticleCore.png" />
             </Grid>
             <Grid Grid.Row="5">
                 <Grid.ColumnDefinitions>
