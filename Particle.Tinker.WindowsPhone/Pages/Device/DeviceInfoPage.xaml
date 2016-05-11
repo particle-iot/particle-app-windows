@@ -17,6 +17,7 @@
         <converters:OnlyShowForElectronConverter x:Key="OnlyShowForElectronConverter" />
         <converters:OnlyShowForPhotonConverter x:Key="OnlyShowForPhotonConverter" />
         <converters:PlatformIdToImageConverter x:Key="PlatformIdToImageConverter" />
+        <converters:ProductIdToNameConverter x:Key="ProductIdToNameConverter" />
         <converters:StateToColorOrStringConverter x:Key="StateToColorOrStringConverter" />
         <converters:StateToEmtyListConverter x:Key="StateToEmtyListConverter" />
         <converters:StringFormatConverter x:Key="StringFormatConverter" />
@@ -94,7 +95,7 @@
                                     <RowDefinition Height="auto" />
                                 </Grid.RowDefinitions>
                                 <TextBlock x:Uid="InfoDevice" Grid.Column="0" Grid.Row="0" FontSize="16" Text="[Device:]" />
-                                <TextBlock Grid.Column="2" Grid.Row="0" FontSize="16" Text="{Binding ProductId}" />
+                                <TextBlock Grid.Column="2" Grid.Row="0" FontSize="16" Text="{Binding ProductId, Converter={StaticResource ProductIdToNameConverter}}" />
                                 <TextBlock x:Uid="InfoState" Grid.Column="0" Grid.Row="1" FontSize="16" Text="[State:]" />
                                 <StackPanel Grid.Column="2" Grid.Row="1" Orientation="Horizontal">
                                     <TextBlock FontSize="16" Text="{Binding State, Converter={StaticResource StateToColorOrStringConverter}}" />

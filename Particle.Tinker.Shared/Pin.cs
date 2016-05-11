@@ -40,6 +40,7 @@ namespace Particle.Tinker
         public static PinAction[] NoAnalogWrite = { PinAction.AnalogRead, PinAction.DigitalRead, PinAction.DigitalWrite };
         public static PinAction[] NoAnalogRead = { PinAction.AnalogWrite, PinAction.DigitalRead, PinAction.DigitalWrite };
         public static PinAction[] DigitalOnly = { PinAction.DigitalRead, PinAction.DigitalWrite };
+        public static PinAction[] AnalogReadOnly = { PinAction.AnalogRead };
 
         #endregion
 
@@ -286,9 +287,9 @@ namespace Particle.Tinker
         {
             List<Pin> allPins = new List<Pin>();
 
-            switch (particleDevice.PlatformId)
+            switch (particleDevice.KnownPlatformId)
             {
-                case ParticleDeviceType.Core:
+                case ParticleDeviceType.ParticleCore:
                     allPins.Add(new Pin("TinkerA7", PinType.A, "A7", AllFunctions));
                     allPins.Add(new Pin("TinkerA6", PinType.A, "A6", AllFunctions));
                     allPins.Add(new Pin("TinkerA5", PinType.A, "A5", AllFunctions));
@@ -309,8 +310,9 @@ namespace Particle.Tinker
 
                     break;
 
-                case ParticleDeviceType.Photon:
-                case ParticleDeviceType.P1:
+                case ParticleDeviceType.ParticlePhoton:
+                case ParticleDeviceType.ParticleP1:
+                case ParticleDeviceType.RedBearDuo: // TODO: RedBearDuo is assumed
                     allPins.Add(new Pin("TinkerA7", PinType.A, "A7", AllFunctions, "WKP", AnalogWriteMax));
                     allPins.Add(new Pin("TinkerA6", PinType.A, "A6", AllFunctionsDAC, "DAC", AnalogWriteMaxAlt));
                     allPins.Add(new Pin("TinkerA5", PinType.A, "A5", AllFunctions));
@@ -331,7 +333,7 @@ namespace Particle.Tinker
 
                     break;
 
-                case ParticleDeviceType.Electron:
+                case ParticleDeviceType.ParticleElectron:
                     allPins.Add(new Pin("TinkerA7", PinType.A, "A7", AllFunctions, "WKP", AnalogWriteMax));
                     allPins.Add(new Pin("TinkerA6", PinType.A, "A6", AllFunctionsDAC, "DAC", AnalogWriteMaxAlt));
                     allPins.Add(new Pin("TinkerA5", PinType.A, "A5", AllFunctions));
@@ -363,6 +365,45 @@ namespace Particle.Tinker
                     allPins.Add(new Pin("TinkerC2", PinType.C, "C2", DigitalOnly));
                     allPins.Add(new Pin("TinkerC1", PinType.C, "C1", DigitalOnly));
                     allPins.Add(new Pin("TinkerC0", PinType.C, "C0", DigitalOnly));
+
+                    break;
+
+                case ParticleDeviceType.DigistumpOak: // TODO: DigistumpOak is assumed
+                    allPins.Add(new Pin("TinkerA7", PinType.A, "A0", AnalogReadOnly));
+                    allPins.Add(new Pin("TinkerA6", PinType.A, "10", NoAnalogRead));
+                    allPins.Add(new Pin("TinkerA5", PinType.A, "9", NoAnalogRead));
+                    allPins.Add(new Pin("TinkerA4", PinType.A, "8", NoAnalogRead));
+                    allPins.Add(new Pin("TinkerA3", PinType.A, "7", NoAnalogRead));
+                    allPins.Add(new Pin("TinkerA2", PinType.A, "6", NoAnalogRead));
+
+                    allPins.Add(new Pin("TinkerD7", PinType.D, "5", NoAnalogRead));
+                    allPins.Add(new Pin("TinkerD6", PinType.D, "4", NoAnalogRead));
+                    allPins.Add(new Pin("TinkerD5", PinType.D, "3", NoAnalogRead));
+                    allPins.Add(new Pin("TinkerD4", PinType.D, "2", NoAnalogRead));
+                    allPins.Add(new Pin("TinkerD3", PinType.D, "1", NoAnalogRead));
+                    allPins.Add(new Pin("TinkerD2", PinType.D, "0", NoAnalogRead));
+
+                    break;
+
+                case ParticleDeviceType.BluzDK:
+                    allPins.Add(new Pin("TinkerA7", PinType.A, "A7", NoAnalogRead));
+                    allPins.Add(new Pin("TinkerA6", PinType.A, "A6", NoAnalogRead));
+                    allPins.Add(new Pin("TinkerA5", PinType.A, "A5", AllFunctions));
+                    allPins.Add(new Pin("TinkerA4", PinType.A, "A4", AllFunctions));
+                    allPins.Add(new Pin("TinkerA3", PinType.A, "A3", AllFunctions));
+                    allPins.Add(new Pin("TinkerA2", PinType.A, "A2", NoAnalogWrite));
+                    allPins.Add(new Pin("TinkerA1", PinType.A, "A1", NoAnalogWrite));
+                    allPins.Add(new Pin("TinkerA0", PinType.A, "A0", NoAnalogWrite));
+
+                    allPins.Add(new Pin("TinkerD7", PinType.D, "D7", NoAnalogRead));
+                    allPins.Add(new Pin("TinkerD6", PinType.D, "D6", NoAnalogRead));
+                    allPins.Add(new Pin("TinkerD5", PinType.D, "D5", NoAnalogRead));
+                    allPins.Add(new Pin("TinkerD4", PinType.D, "D4", NoAnalogRead));
+                    allPins.Add(new Pin("TinkerD3", PinType.D, "D3", NoAnalogRead));
+                    allPins.Add(new Pin("TinkerD2", PinType.D, "D2", NoAnalogRead));
+                    allPins.Add(new Pin("TinkerD1", PinType.D, "D1", NoAnalogRead));
+                    allPins.Add(new Pin("TinkerD0", PinType.D, "D0", NoAnalogRead));
+
                     break;
             }
 

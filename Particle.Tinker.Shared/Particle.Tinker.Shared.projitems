@@ -76,10 +76,13 @@
     <Content Include="$(MSBuildThisFileDirectory)Assets\Icons\IconRefresh.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Logos\LogoParticleHorizontal.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Logos\LogoParticleVertical.png" />
-    <Content Include="$(MSBuildThisFileDirectory)Assets\Prototypes\PrototypeCore.png" />
-    <Content Include="$(MSBuildThisFileDirectory)Assets\Prototypes\PrototypeElectron.png" />
-    <Content Include="$(MSBuildThisFileDirectory)Assets\Prototypes\PrototypeP1.png" />
-    <Content Include="$(MSBuildThisFileDirectory)Assets\Prototypes\PrototypePhoton.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Prototypes\PrototypeBluzDK.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Prototypes\PrototypeParticleCore.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Prototypes\PrototypeDigistumpOak.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Prototypes\PrototypeParticleElectron.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Prototypes\PrototypeParticleP1.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Prototypes\PrototypeParticlePhoton.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Prototypes\PrototypeRedBearDuo.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Prototypes\PrototypeUnknown.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\TinkerLogo.png" />
   </ItemGroup>

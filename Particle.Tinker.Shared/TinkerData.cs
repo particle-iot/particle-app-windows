@@ -85,12 +85,12 @@ namespace Particle.Tinker
 
         public static bool CanFlashTinker(ParticleDevice particleDevice)
         {
-            switch (particleDevice.ProductId)
+            switch (particleDevice.KnownProductId)
             {
-                case ParticleDeviceType.Core:
-                case ParticleDeviceType.Photon:
-                case ParticleDeviceType.P1:
-                case ParticleDeviceType.Electron:
+                case ParticleDeviceType.ParticleCore:
+                case ParticleDeviceType.ParticlePhoton:
+                case ParticleDeviceType.ParticleP1:
+                case ParticleDeviceType.ParticleElectron:
                     return true;
                 default:
                     return false;

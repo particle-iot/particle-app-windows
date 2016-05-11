@@ -27,12 +27,12 @@ namespace Particle.Tinker
                 flyout.Hide();
                 actionButton.Click -= actionClickDelegate;
 
-                switch (particleDevice.ProductId)
+                switch (particleDevice.KnownProductId)
                 {
-                    case ParticleDeviceType.Core:
+                    case ParticleDeviceType.ParticleCore:
                         await particleDevice.FlashKnownAppAsync("tinker");
                         break;
-                    case ParticleDeviceType.Photon:
+                    case ParticleDeviceType.ParticlePhoton:
                         {
                             StorageFolder installationFolder = Windows.ApplicationModel.Package.Current.InstalledLocation;
                             StorageFile firmwareFile = await installationFolder.GetFileAsync("Firmware\\PhotonTinker.bin");
@@ -40,7 +40,7 @@ namespace Particle.Tinker
                             await particleDevice.FlashBinaryAsync(firmwareStream, "tinker.bin");
                         }
                         break;
-                    case ParticleDeviceType.P1:
+                    case ParticleDeviceType.ParticleP1:
                         {
                             StorageFolder installationFolder = Windows.ApplicationModel.Package.Current.InstalledLocation;
                             StorageFile firmwareFile = await installationFolder.GetFileAsync("Firmware\\P1Tinker.bin");
@@ -48,7 +48,7 @@ namespace Particle.Tinker
                             await particleDevice.FlashBinaryAsync(firmwareStream, "tinker.bin");
                         }
                         break;
-                    case ParticleDeviceType.Electron:
+                    case ParticleDeviceType.ParticleElectron:
                         {
                             // TODO: Warn user about data usage
                             StorageFolder installationFolder = Windows.ApplicationModel.Package.Current.InstalledLocation;

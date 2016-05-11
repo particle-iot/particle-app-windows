@@ -18,6 +18,7 @@
 
             <converters:NameToNameConverter x:Key="NameToNameConverter" />
             <converters:PlatformIdToImageConverter x:Key="PlatformIdToImageConverter" />
+            <converters:ProductIdToNameConverter x:Key="ProductIdToNameConverter" />
             <converters:StateToColorOrStringConverter x:Key="StateToColorOrStringConverter" />
             <converters:StringToUppercaseConverter x:Key="StringToUppercaseConverter" />
 
@@ -135,7 +136,7 @@
                                             <ColumnDefinition Width="*" />
                                             <ColumnDefinition Width="Auto" />
                                         </Grid.ColumnDefinitions>
-                                        <TextBlock Grid.Column="0" FontSize="16" Text="{Binding ProductId}" />
+                                        <TextBlock Grid.Column="0" FontSize="16" Text="{Binding ProductId, Converter={StaticResource ProductIdToNameConverter}}" />
                                         <StackPanel Grid.Column="2" HorizontalAlignment="Right" Orientation="Horizontal">
                                             <TextBlock HorizontalAlignment="Right" FontSize="16" Text="{Binding State, Converter={StaticResource StateToColorOrStringConverter}}" />
                                             <Ellipse Width="22" Height="22" Margin="10,0,0,0" Fill="{Binding State, Converter={StaticResource StateToColorOrStringConverter}}" />

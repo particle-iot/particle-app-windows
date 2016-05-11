@@ -1,5 +1,4 @@
 ﻿using Particle.SDK;
-using Particle.Setup.Models;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -75,7 +74,7 @@ namespace Particle.Tinker.Converters
     {
         public object Convert(object value, Type targetType, object parameter, string language)
         {
-            if ((ParticleDeviceType)value == ParticleDeviceType.Core)
+            if ((ParticleDeviceType)value == ParticleDeviceType.ParticleCore)
                 return Visibility.Visible;
             else
                 return Visibility.Collapsed;
@@ -91,7 +90,7 @@ namespace Particle.Tinker.Converters
     {
         public object Convert(object value, Type targetType, object parameter, string language)
         {
-            if ((ParticleDeviceType)value == ParticleDeviceType.Electron)
+            if ((ParticleDeviceType)value == ParticleDeviceType.ParticleElectron)
                 return Visibility.Visible;
             else
                 return Visibility.Collapsed;
@@ -107,7 +106,7 @@ namespace Particle.Tinker.Converters
     {
         public object Convert(object value, Type targetType, object parameter, string language)
         {
-            if ((ParticleDeviceType)value == ParticleDeviceType.Photon || (ParticleDeviceType)value == ParticleDeviceType.P1)
+            if ((ParticleDeviceType)value == ParticleDeviceType.ParticlePhoton || (ParticleDeviceType)value == ParticleDeviceType.ParticleP1)
                 return Visibility.Visible;
             else
                 return Visibility.Collapsed;
@@ -123,7 +122,21 @@ namespace Particle.Tinker.Converters
     {
         public object Convert(object value, Type targetType, object parameter, string language)
         {
-            return $"/Assets/Prototypes/Prototype{value}.png";
+            var deviceType = ParticleDevice.IntToParticleDeviceType((int)value);
+            return $"/Assets/Prototypes/Prototype{deviceType}.png";
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, string language)
+        {
+            throw new NotImplementedException();
+        }
+    }
+
+    public class ProductIdToNameConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, string language)
+        {
+            return ParticleDevice.ParticleDeviceTypeToString((ParticleDeviceType)value);
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, string language)
