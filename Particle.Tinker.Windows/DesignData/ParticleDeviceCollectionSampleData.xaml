@@ -1,7 +1,7 @@
 ﻿<ParticleSDK:ParticleDeviceCollection xmlns:ParticleSDK="using:Particle.SDK" xmlns:System="using:System">
-    <ParticleSDK:ParticleDevice Id="53ff6a065067544850320687" Name="PHOTON1" LastApp="" LastIPAddress="50.132.89.229" LastHeard="03/09/2016 11:32:10" ProductId="Photon" Connected="True" PlatformId="0" Cellular="False" State="Tinker" />
-    <ParticleSDK:ParticleDevice Id="53ff75065067544838370587" Name="CORE1" LastApp="" LastIPAddress="50.132.89.229" LastHeard="03/09/2016 11:32:10" ProductId="Core" Connected="True" PlatformId="0" Cellular="False" State="Tinker" />
-    <ParticleSDK:ParticleDevice Id="53ff6f065067544858290687" Name="ELECTRON1" LastApp="" LastIPAddress="50.132.89.229" LastHeard="03/09/2016 11:32:10" ProductId="Electron" Connected="False" PlatformId="0" Cellular="True" State="Online" />
-    <ParticleSDK:ParticleDevice Id="50ff6d065067545633060587" Name="CORE2" LastApp="" LastIPAddress="50.132.89.229" LastHeard="03/09/2016 11:32:10" ProductId="Core" Connected="False" PlatformId="0" Cellular="False" State="Flashing" />
-    <ParticleSDK:ParticleDevice Id="53ff6b065067544815500587" Name="CORE3" LastApp="" LastIPAddress="50.132.89.229" LastHeard="03/09/2016 11:32:10" ProductId="Core" Connected="False" PlatformId="0" State="Offline" />
+    <ParticleSDK:ParticleDevice Id="53ff6a065067544850320687" Name="banjo_splendid" LastApp="" LastIPAddress="50.132.89.229" LastHeard="03/09/2016 11:32:10" ProductId="10" Connected="True" PlatformId="10" Cellular="True" State="Tinker" />
+    <ParticleSDK:ParticleDevice Id="53ff75065067544838370587" Name="vampire_lawyer" LastApp="" LastIPAddress="50.132.89.229" LastHeard="03/09/2016 11:32:10" ProductId="8" Connected="True" PlatformId="8" Cellular="False" State="Tinker" />
+    <ParticleSDK:ParticleDevice Id="53ff6f065067544858290687" Name="monkey_power" LastApp="" LastIPAddress="50.132.89.229" LastHeard="03/09/2016 11:32:10" ProductId="6" Connected="False" PlatformId="6" Cellular="False" State="Online" />
+    <ParticleSDK:ParticleDevice Id="50ff6d065067545633060587" Name="raptor_laser" LastApp="" LastIPAddress="50.132.89.229" LastHeard="03/09/2016 11:32:10" ProductId="0" Connected="False" PlatformId="0" Cellular="False" State="Flashing" />
+    <ParticleSDK:ParticleDevice Id="53ff6b065067544815500587" Name="morphing_mutant" LastApp="" LastIPAddress="50.132.89.229" LastHeard="03/09/2016 11:32:10" ProductId="82" Connected="False" PlatformId="82" Cellular="False" State="Offline" />
 </ParticleSDK:ParticleDeviceCollection>

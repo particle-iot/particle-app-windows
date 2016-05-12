@@ -1,4 +1,4 @@
-﻿<ParticleSDK:ParticleDevice xmlns:ParticleSDK="using:Particle.SDK" xmlns:System="using:System" Id="53ff6a065067544850320687" Name="CORE1" LastApp="" LastIPAddress="50.132.89.229" LastHeard="03/09/2016 11:32:10" ProductId="Core" Connected="True" PlatformId="0" Cellular="False" State="Tinker" CC3000PatchVersion="1.28">
+﻿<ParticleSDK:ParticleDevice xmlns:ParticleSDK="using:Particle.SDK" xmlns:System="using:System" Id="53ff6a065067544850320687" Name="CORE1" LastApp="" LastIPAddress="50.132.89.229" LastHeard="03/09/2016 11:32:10" ProductId="0" Connected="True" PlatformId="0" Cellular="False" State="Tinker" CC3000PatchVersion="1.28">
     <ParticleSDK:ParticleDevice.Functions>
         <System:String>digitalread</System:String>
         <System:String>digitalwrite</System:String>
