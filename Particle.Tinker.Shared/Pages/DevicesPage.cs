@@ -280,23 +280,25 @@ namespace Particle.Tinker.Pages
             {
                 case "spark/status":
                     if (particleDevice.IsFlashing && particeEvent.Data.Equals("online"))
-                        particleDevice.ExternalFlashDetected(true);
+                        particleDevice.FlagFlashStatusChange(true);
 
-                    await particleDevice.RefreshAsync();
-
-                    var sortedDevices = TinkerData.Devices.OrderByDescending(device => device.Connected).ThenBy(device => device.Name).ToList();
-                    var newIndex = TinkerData.Devices.IndexOf(particleDevice);
-                    var oldIndex = sortedDevices.IndexOf(particleDevice);
-                    if (newIndex != oldIndex)
+                    bool success = await particleDevice.RefreshAsync();
+                    if (success)
                     {
-                        TinkerData.Devices.Remove(particleDevice);
-                        TinkerData.Devices.Insert(newIndex, particleDevice);
+                        var sortedDevices = TinkerData.Devices.OrderByDescending(device => device.Connected).ThenBy(device => device.Name).ToList();
+                        var newIndex = sortedDevices.IndexOf(particleDevice);
+                        var oldIndex = TinkerData.Devices.IndexOf(particleDevice);
+                        if (newIndex != oldIndex)
+                        {
+                            TinkerData.Devices.Remove(particleDevice);
+                            TinkerData.Devices.Insert(newIndex, particleDevice);
+                        }
                     }
                     break;
 
                 case "spark/flash/status":
                     if (particeEvent.Data.StartsWith("started"))
-                        particleDevice.ExternalFlashDetected();
+                        particleDevice.FlagFlashStatusChange();
 
                     break;
             }
