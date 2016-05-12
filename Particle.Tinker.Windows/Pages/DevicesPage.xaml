@@ -117,13 +117,14 @@
                         <DataTemplate>
                             <Grid Background="Transparent" IsHitTestVisible="True" IsHoldingEnabled="True" Holding="DeviceListBoxItem_Holding" RightTapped="DeviceListBoxItem_RightTapped">
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width=".02*" />
-                                    <ColumnDefinition Width=".16*" />
-                                    <ColumnDefinition Width=".78*" />
-                                    <ColumnDefinition Width=".04*" />
+                                    <ColumnDefinition Width=".05*" />
+                                    <ColumnDefinition Width=".09*" />
+                                    <ColumnDefinition Width=".03*" />
+                                    <ColumnDefinition Width=".80*" />
+                                    <ColumnDefinition Width=".03*" />
                                 </Grid.ColumnDefinitions>
-                                <Image Grid.Column="1" Margin="14,14" Source="{Binding PlatformId, Converter={StaticResource PlatformIdToImageConverter}}" />
-                                <Grid Grid.Column="2" Margin="0,14">
+                                <Image Grid.Column="1" Margin="0,14" Source="{Binding PlatformId, Converter={StaticResource PlatformIdToImageConverter}}" />
+                                <Grid Grid.Column="3" Margin="0,14">
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height=".1*" />
                                         <RowDefinition Height=".1*" />
