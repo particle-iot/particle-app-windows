@@ -275,12 +275,12 @@
       <HintPath>..\packages\Newtonsoft.Json.8.0.3\lib\portable-net45+wp80+win8+wpa81+dnxcore50\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Particle.SDK, Version=0.0.6.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Particle.SDK.0.0.6\lib\portable46-win81+wpa81\Particle.SDK.dll</HintPath>
+    <Reference Include="Particle.SDK, Version=0.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Particle.SDK.0.1.0\lib\portable46-win81+wpa81\Particle.SDK.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Particle.Setup, Version=0.0.6.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Particle.Setup.0.0.6\lib\portable46-win81+wpa81\Particle.Setup.dll</HintPath>
+    <Reference Include="Particle.Setup, Version=0.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Particle.Setup.0.1.0\lib\portable46-win81+wpa81\Particle.Setup.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
