@@ -5,7 +5,7 @@ Particle Tinker app for Windows adheres to [Semantic Versioning](http://semver.o
 
 ---
 
-## [0.1.0](https://github.com/spark/particle-app-windows/releases/tag/v0.1.0) (2016-??-??)
+## [0.1.0](https://github.com/spark/particle-app-windows/releases/tag/v0.1.0) (2016-05-16)
 
 * Use Particle.SDK and Particle.Setup 0.1.0
 * Fix FlyoutMenus not fully showing when soft buttons are showing
