@@ -78,7 +78,7 @@ namespace Particle.Tinker
 
         public static HashSet<string> GetDeviceNames()
         {
-            if (deviceNames == null)
+            if (deviceNames == null && devices != null)
             {
                 deviceNames = new HashSet<string>();
                 foreach (var device in devices)
@@ -107,7 +107,6 @@ namespace Particle.Tinker
             setupConfig = new SetupConfig();
             setupConfig.AppFrame = frame;
             setupConfig.CompletionPageType = typeof(DevicesPage);
-            setupConfig.CurrentDeviceNames = GetDeviceNames();
             setupConfig.OnSetupLogout += Logout;
         }
 
