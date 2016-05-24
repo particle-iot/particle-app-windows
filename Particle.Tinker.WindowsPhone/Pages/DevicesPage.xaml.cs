@@ -14,9 +14,9 @@ namespace Particle.Tinker.Pages
 
         protected override async void PostNavigatedTo(NavigationEventArgs e)
         {
-            if (SoftAP.SoftAPResult.ParticleDevice != null)
-                SoftAP.ResetSoftAPResult();
-            else if (e.NavigationMode == NavigationMode.Back)
+            if (ParticleSetup.SoftAPResult.ParticleDevice != null)
+                ParticleSetup.ResetSoftAPResult();
+            else if (e.NavigationMode == NavigationMode.Back && TinkerData.Devices != null)
                 return;
 
             await SetupTinkerAsync();

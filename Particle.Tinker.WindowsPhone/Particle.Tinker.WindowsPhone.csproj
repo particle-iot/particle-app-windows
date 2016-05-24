@@ -85,12 +85,6 @@
     <Compile Include="Pages\AboutPage.xaml.cs">
       <DependentUpon>AboutPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Auth\LoginPage.xaml.cs">
-      <DependentUpon>LoginPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\Auth\TokenCreatePage.xaml.cs">
-      <DependentUpon>TokenCreatePage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Pages\Device\DevicePinPage.xaml.cs">
       <DependentUpon>DevicePinPage.xaml</DependentUpon>
     </Compile>
@@ -113,15 +107,6 @@
       <DependentUpon>DeviceInfoPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Pages\Auth\ForgotPasswordPage.xaml.cs">
-      <DependentUpon>ForgotPasswordPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\Auth\SignupPage.xaml.cs">
-      <DependentUpon>SignupPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\Auth\TokenLoginPage.xaml.cs">
-      <DependentUpon>TokenLoginPage.xaml</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -213,14 +198,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\Auth\LoginPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\Auth\TokenCreatePage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="Pages\Device\DevicePinPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -228,18 +205,6 @@
     <Page Include="Pages\DevicesPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Pages\Auth\ForgotPasswordPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Pages\Auth\SignupPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\Auth\TokenLoginPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\Device\FunctionsPage.xaml">
       <Generator>MSBuild:Compile</Generator>

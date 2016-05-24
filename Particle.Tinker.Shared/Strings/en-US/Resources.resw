@@ -117,10 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AlreadyHaveAccount.Text" xml:space="preserve">
-    <value>I already have an account</value>
-    <comment>Used on Page: Auth - Signup</comment>
-  </data>
   <data name="AnalogPinWriteCaption" xml:space="preserve">
     <value>Set new value for pin: {0}</value>
     <comment>Used on Flyout: AnalogWrite</comment>
@@ -141,10 +137,6 @@
     <value>Add</value>
     <comment>Used on Page: Devices</comment>
   </data>
-  <data name="AppBarLoginWithToken.Label" xml:space="preserve">
-    <value>Log In with Token</value>
-    <comment>Used on Page: Auth - Login</comment>
-  </data>
   <data name="AppBarLogOut.Label" xml:space="preserve">
     <value>Log Out</value>
     <comment>Used on Page: Devices</comment>
@@ -157,25 +149,13 @@
     <value>GET STARTED</value>
     <comment>Used on Button</comment>
   </data>
-  <data name="ButtonLogin.Content" xml:space="preserve">
-    <value>LOG IN</value>
-    <comment>Used on Page: Auth - Login, TokenLogin</comment>
-  </data>
   <data name="ButtonOk.Content" xml:space="preserve">
     <value>OK</value>
     <comment>Used on Button</comment>
   </data>
-  <data name="ButtonSignup.Content" xml:space="preserve">
-    <value>SIGN UP</value>
-    <comment>Used on Page: Auth - Signup</comment>
-  </data>
   <data name="ClearTinker.Text" xml:space="preserve">
     <value>Reset all pin functions</value>
     <comment>Used on Flyout: Device</comment>
-  </data>
-  <data name="CreateParticleAccount.Text" xml:space="preserve">
-    <value>Create Particle account</value>
-    <comment>Used on Page: Auth - Signup</comment>
   </data>
   <data name="DeviceOffline.Text" xml:space="preserve">
     <value>Device offline</value>
@@ -229,25 +209,9 @@
     <value>Documentation</value>
     <comment>Used on Flyout: Device</comment>
   </data>
-  <data name="DontHaveAccount.Text" xml:space="preserve">
-    <value>I don't have an account</value>
-    <comment>Used on Page: Auth - Login</comment>
-  </data>
-  <data name="DontHaveToken.Text" xml:space="preserve">
-    <value>I don't have a token</value>
-    <comment>Used on Page: Auth - TokenLogin</comment>
-  </data>
-  <data name="EmailPlaceholder.PlaceholderText" xml:space="preserve">
-    <value>email</value>
-    <comment>Used on Page: Auth - Login, Signup, ForgotPassword, CreateToken</comment>
-  </data>
   <data name="FlashTinkerQuestion.Text" xml:space="preserve">
     <value>Flash Tinker?</value>
     <comment>Used on Flyout: DeviceFlash</comment>
-  </data>
-  <data name="ForgotPassword.Text" xml:space="preserve">
-    <value>I forgot my password</value>
-    <comment>Used on Page: Auth - Login</comment>
   </data>
   <data name="GetStartedBeta.Text" xml:space="preserve">
     <value>beta</value>
@@ -305,17 +269,9 @@
     <value>Particle community</value>
     <comment>Used on Flyout: Device</comment>
   </data>
-  <data name="ParticleLogin.Text" xml:space="preserve">
-    <value>Particle Login</value>
-    <comment>Used on Page: Auth - Login, TokenLogin</comment>
-  </data>
   <data name="ParticleSupport.Text" xml:space="preserve">
     <value>Particle support</value>
     <comment>Used on Flyout: Device</comment>
-  </data>
-  <data name="PasswordPlaceholder.PlaceholderText" xml:space="preserve">
-    <value>password</value>
-    <comment>Used on Page: Auth - Login, Signup, CreateToken</comment>
   </data>
   <data name="ReFlashTinker.Text" xml:space="preserve">
     <value>Re-flash Tinker</value>
@@ -337,29 +293,9 @@
     <value>Setting up your Photon/Core</value>
     <comment>Used on Flyout: Device</comment>
   </data>
-  <data name="SignupAnd.Text" xml:space="preserve">
-    <value>and</value>
-    <comment>Used on Page: Auth - Signup</comment>
-  </data>
-  <data name="SignupByClicking.Text" xml:space="preserve">
-    <value>By clicking SIGN UP you are indicating thay you have read and agree to the</value>
-    <comment>Used on Page: Auth - Signup</comment>
-  </data>
-  <data name="SignupPrivacyPolicy.Text" xml:space="preserve">
-    <value>Privacy Policy</value>
-    <comment>Used on Page: Auth - Signup</comment>
-  </data>
-  <data name="SignupTermsOfService.Text" xml:space="preserve">
-    <value>Terms of Service</value>
-    <comment>Used on Page: Auth - Signup</comment>
-  </data>
   <data name="Support.Text" xml:space="preserve">
     <value>Support</value>
     <comment>Used on Flyout: Device</comment>
-  </data>
-  <data name="TokenPlaceholder.PlaceholderText" xml:space="preserve">
-    <value>token</value>
-    <comment>Used on Page: Auth - TokenLogin</comment>
   </data>
   <data name="Unclaim.Text" xml:space="preserve">
     <value>Unclaim</value>
@@ -368,10 +304,6 @@
   <data name="UnclaimDeviceQuestion.Text" xml:space="preserve">
     <value>Unclaim Device?</value>
     <comment>Used on Flyout: DeviceUnclaim</comment>
-  </data>
-  <data name="VerifyPasswordPlaceholder.PlaceholderText" xml:space="preserve">
-    <value>verify password</value>
-    <comment>Used on Page: Auth - Signup</comment>
   </data>
   <data name="Version.Text" xml:space="preserve">
     <value>Version</value>
@@ -384,22 +316,6 @@
   <data name="ButtonAnalogWriteDac.Content" xml:space="preserve">
     <value>analog write dac</value>
     <comment>Used on Flyout: PinSetup</comment>
-  </data>
-  <data name="ButtonResetPassword.Content" xml:space="preserve">
-    <value>RESET PASSWORD</value>
-    <comment>Used on Page: Auth - ForgotPassword</comment>
-  </data>
-  <data name="Cancel.Text" xml:space="preserve">
-    <value>Cancel</value>
-    <comment>Used on Page: Auth - ForgotPassword, CreateToken</comment>
-  </data>
-  <data name="RequestPasswordReset.Text" xml:space="preserve">
-    <value>Request password reset</value>
-    <comment>Used on Page: Auth - ForgotPassword</comment>
-  </data>
-  <data name="RequestPaswordResetText.Text" xml:space="preserve">
-    <value>An email will be sent to you with a link to a webpage where you can create a new password.</value>
-    <comment>Used on Page: Auth - ForgotPassword</comment>
   </data>
   <data name="Electron.Text" xml:space="preserve">
     <value>Electron</value>
@@ -428,38 +344,6 @@ Enjoy!</value>
   <data name="WelcomToTinkerParticleTeam.Text" xml:space="preserve">
     <value>-The Particle Team</value>
     <comment>Used on Page: DevicePin</comment>
-  </data>
-  <data name="AppBarCreateToken.Label" xml:space="preserve">
-    <value>Create Token</value>
-    <comment>Used on Page: Auth - CreateToken</comment>
-  </data>
-  <data name="ButtonCreate.Content" xml:space="preserve">
-    <value>CREATE</value>
-    <comment>Used on Page: Auth - CreateToken</comment>
-  </data>
-  <data name="CreateParticleToken.Text" xml:space="preserve">
-    <value>Create Particle token</value>
-    <comment>Used on Page: Auth - CreateToken</comment>
-  </data>
-  <data name="Done.Text" xml:space="preserve">
-    <value>Done</value>
-    <comment>Used on Flyout: CreateToken</comment>
-  </data>
-  <data name="Expires.Header" xml:space="preserve">
-    <value>Expires</value>
-    <comment>Used on Page: Auth - CreateToken</comment>
-  </data>
-  <data name="NewToken.Text" xml:space="preserve">
-    <value>Token</value>
-    <comment>Used on Flyout: CreateToken</comment>
-  </data>
-  <data name="NewTokenText.Text" xml:space="preserve">
-    <value>Here is your new token:</value>
-    <comment>Used on Flyout: CreateToken</comment>
-  </data>
-  <data name="ButtonNeverExpires.Content" xml:space="preserve">
-    <value>Never Expires</value>
-    <comment>Used on Page: Auth - CreateToken</comment>
   </data>
   <data name="InfoMbsUsed.Text" xml:space="preserve">
     <value>Mbs Used:</value>
@@ -524,46 +408,6 @@ Enjoy!</value>
   <data name="AppBarStart.Label" xml:space="preserve">
     <value>Start</value>
     <comment>Used on Page: Events</comment>
-  </data>
-  <data name="AuthCredentialsError" xml:space="preserve">
-    <value>Your credentials are invalid</value>
-    <comment>Used on Page: Auth - Login, TokenCreate, TokenLogin</comment>
-  </data>
-  <data name="CreateCredentialsError" xml:space="preserve">
-    <value>This account already exists</value>
-    <comment>Used on Page: Auth - Signup</comment>
-  </data>
-  <data name="ErrorEmailIsRequired" xml:space="preserve">
-    <value>Email field is required</value>
-    <comment>Used on Page: Auth - Login, Signup, TokenCreate, ForgotPassword</comment>
-  </data>
-  <data name="ErrorPasswordIsRequired" xml:space="preserve">
-    <value>Password field is required</value>
-    <comment>Used on Page: Auth - Login, Signup, TokenCreate</comment>
-  </data>
-  <data name="ErrorPasswordsMustMatch" xml:space="preserve">
-    <value>Password fields must match</value>
-    <comment>Used on Page: Auth - Signup</comment>
-  </data>
-  <data name="ErrorTokenIsRequired" xml:space="preserve">
-    <value>Token field is required</value>
-    <comment>Used on Page: Auth - TokenLogin</comment>
-  </data>
-  <data name="ForgotPasswordError" xml:space="preserve">
-    <value>Could not find a user with the supplied email address</value>
-    <comment>Used on Page: Auth - ForgotPassword</comment>
-  </data>
-  <data name="ForgotPasswordSuccess" xml:space="preserve">
-    <value>Please check your email and follow the directions contained inside</value>
-    <comment>Used on Page: Auth - ForgotPassword</comment>
-  </data>
-  <data name="TokenCreateExpireTimePast" xml:space="preserve">
-    <value>Expire time is in the past</value>
-    <comment>Used on Page: Auth - TokenCreate</comment>
-  </data>
-  <data name="TokenCreateExpireTimeSoon" xml:space="preserve">
-    <value>Expire time is too soon</value>
-    <comment>Used on Page: Auth - TokenCreate</comment>
   </data>
   <data name="Error" xml:space="preserve">
     <value>Error</value>

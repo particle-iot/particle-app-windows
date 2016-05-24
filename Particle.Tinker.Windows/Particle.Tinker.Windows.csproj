@@ -106,21 +106,6 @@
     <Compile Include="Pages\AboutPage.xaml.cs">
       <DependentUpon>AboutPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Auth\ForgotPasswordPage.xaml.cs">
-      <DependentUpon>ForgotPasswordPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\Auth\LoginPage.xaml.cs">
-      <DependentUpon>LoginPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\Auth\SignupPage.xaml.cs">
-      <DependentUpon>SignupPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\Auth\TokenCreatePage.xaml.cs">
-      <DependentUpon>TokenCreatePage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\Auth\TokenLoginPage.xaml.cs">
-      <DependentUpon>TokenLoginPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Pages\Device\DevicePinPage.xaml.cs">
       <DependentUpon>DevicePinPage.xaml</DependentUpon>
     </Compile>
@@ -239,26 +224,6 @@
       <SubType>Designer</SubType>
     </DesignData>
     <Page Include="Pages\AboutPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Pages\Auth\ForgotPasswordPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Pages\Auth\LoginPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Pages\Auth\SignupPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Pages\Auth\TokenCreatePage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Pages\Auth\TokenLoginPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

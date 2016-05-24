@@ -1,4 +1,5 @@
 ﻿using Particle.SDK;
+using Particle.Setup;
 using Particle.Tinker.Pages;
 using Particle.UI;
 using System;
@@ -60,24 +61,19 @@ namespace Particle.Tinker
 #endif
 
                 ParticleCloud.SharedCloud.SynchronizationContext = System.Threading.SynchronizationContext.Current;
+                TinkerData.InitSetup(rootFrame);
 
-                Type firstPage = null;
-
-                string accessToken = TinkerData.AccessToken;
-                if (!String.IsNullOrWhiteSpace(accessToken))
+                string accessToken = ParticleSetup.AccessToken;
+                if (!string.IsNullOrWhiteSpace(accessToken))
                 {
                     ParticleCloud.SharedCloud.SetAuthentication(accessToken);
-                    firstPage = typeof(DevicesPage);
+                    ParticleSetup.Start(TinkerData.SetupConfig, true);
                 }
                 else
                 {
-                    firstPage = typeof(GetStartedPage);
+                    if (!rootFrame.Navigate(typeof(GetStartedPage), e.Arguments))
+                        throw new Exception("Failed to create initial page");
                 }
-
-                if (!rootFrame.Navigate(firstPage, e.Arguments))
-                    throw new Exception("Failed to create initial page");
-
-                TinkerData.SetApplcationFrame(rootFrame);
             }
             
             Window.Current.Activate();

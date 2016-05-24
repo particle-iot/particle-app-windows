@@ -29,7 +29,7 @@ namespace Particle.Tinker.Pages
 
         private void ParticleCloud_ClientUnauthorized()
         {
-            TinkerData.Logout();
+            ParticleSetup.Logout();
         }
 
         #endregion
@@ -162,7 +162,7 @@ namespace Particle.Tinker.Pages
 
         private void LogoutAppBarButton_click(object sender, RoutedEventArgs e)
         {
-            TinkerData.Logout();
+            ParticleSetup.Logout();
         }
 
         private async void RefreshAppBarButton_Click(object sender, RoutedEventArgs e)
@@ -199,23 +199,22 @@ namespace Particle.Tinker.Pages
         {
             UI.WindowsRuntimeResourceManager.InjectIntoResxGeneratedApplicationResourcesClass(typeof(Particle.Setup.SetupResources));
 
-            SoftAPSettings softAPSettings = new SoftAPSettings();
-            softAPSettings.AppFrame = Frame;
-            softAPSettings.CompletionPageType = GetType();
-            softAPSettings.Username = TinkerData.Username;
-            softAPSettings.CurrentDeviceNames = TinkerData.GetDeviceNames();
-            softAPSettings.OnSoftAPExit += SoftAPSettings_OnSoftAPExit;
+            SetupConfig setupConfig = TinkerData.SetupConfig;
+            setupConfig.AppFrame = Frame;
+            setupConfig.CompletionPageType = GetType();
+            setupConfig.CurrentDeviceNames = TinkerData.GetDeviceNames();
+            setupConfig.OnSetupExit += SetupConfig_OnSoftAPExit;
 
 #if WINDOWS_PHONE_APP
             hardwareButtonsBackPressed = new EventHandler<Windows.Phone.UI.Input.BackPressedEventArgs>(delegate (object sender, Windows.Phone.UI.Input.BackPressedEventArgs e)
             {
-                e.Handled = SoftAP.BackButtonPressed();
+                e.Handled = ParticleSetup.BackButtonPressed();
             });
 
             Windows.Phone.UI.Input.HardwareButtons.BackPressed += hardwareButtonsBackPressed;
 #endif
 
-            SoftAP.Start(softAPSettings);
+            ParticleSetup.Start(setupConfig);
         }
 
         private async Task LoadDevicesAsync()
@@ -263,7 +262,7 @@ namespace Particle.Tinker.Pages
             deviceFlyout.ShowAt(senderElement);
         }
 
-        private void SoftAPSettings_OnSoftAPExit()
+        private void SetupConfig_OnSoftAPExit()
         {
 #if WINDOWS_PHONE_APP
             Windows.Phone.UI.Input.HardwareButtons.BackPressed -= hardwareButtonsBackPressed;

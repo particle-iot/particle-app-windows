@@ -20,11 +20,6 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Converters\Converters.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)FlyoutHelper.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Pages\Auth\ForgotPasswordPage.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Pages\Auth\LoginPage.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Pages\Auth\TokenCreatePage.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Pages\Auth\SignupPage.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Pages\Auth\TokenLoginPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\DevicesPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\Device\DevicePinPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\Device\DeviceInfoPage.cs" />

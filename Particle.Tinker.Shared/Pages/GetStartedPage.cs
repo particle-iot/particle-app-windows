@@ -1,7 +1,5 @@
-﻿using Particle.Tinker.Pages.Auth;
-using System;
+﻿using Particle.Setup;
 using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
 
 namespace Particle.Tinker.Pages
 {
@@ -11,15 +9,7 @@ namespace Particle.Tinker.Pages
 
         private void GetStartedButton_Click(object sender, RoutedEventArgs e)
         {
-            {
-                Type authPage = null;
-                if (TinkerData.HasSignedIn)
-                    authPage = typeof(LoginPage);
-                else
-                    authPage = typeof(SignupPage);
-
-                Frame.Navigate(authPage);
-            }
+            ParticleSetup.Start(TinkerData.SetupConfig, true);
         }
 
         #endregion

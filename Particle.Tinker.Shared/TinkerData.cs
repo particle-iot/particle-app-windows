@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using Particle.SDK;
-using Particle.Tinker.Pages.Auth;
+using Particle.Setup;
+using Particle.Tinker.Pages;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using Windows.Storage;
@@ -19,25 +20,14 @@ namespace Particle.Tinker
         #region Private Members
 
         private static ApplicationDataContainer localSettings = ApplicationData.Current.LocalSettings;
-        private static Frame applcationFrame = null;
         private static ObservableCollection<ParticleDevice> devices = null;
         private static HashSet<string> deviceNames = null;
         private static Dictionary<string, Dictionary<string, PinAction>> devicesPinActions = null;
-        
+        private static SetupConfig setupConfig = null;
+
         #endregion
 
         #region Properties
-
-        public static string AccessToken
-        {
-            get
-            {
-                if (localSettings.Values.ContainsKey("AccessToken"))
-                    return (string)localSettings.Values["AccessToken"];
-                else
-                    return null;
-            }
-        }
 
         public static ObservableCollection<ParticleDevice> Devices
         {
@@ -60,22 +50,11 @@ namespace Particle.Tinker
             }
         }
 
-        public static bool HasSignedIn
+        public static SetupConfig SetupConfig
         {
             get
             {
-                return localSettings.Values.ContainsKey("HasSignedIn");
-            }
-        }
-
-        public static string Username
-        {
-            get
-            {
-                if (localSettings.Values.ContainsKey("Username"))
-                    return (string)localSettings.Values["Username"];
-                else
-                    return "";
+                return setupConfig;
             }
         }
 
@@ -123,11 +102,13 @@ namespace Particle.Tinker
             }
         }
 
-        public static void Login()
+        public static void InitSetup(Frame frame)
         {
-            localSettings.Values["HasSignedIn"] = true;
-            localSettings.Values["AccessToken"] = ParticleCloud.SharedCloud.AccessToken;
-            localSettings.Values["Username"] = ParticleCloud.SharedCloud.Username;
+            setupConfig = new SetupConfig();
+            setupConfig.AppFrame = frame;
+            setupConfig.CompletionPageType = typeof(DevicesPage);
+            setupConfig.CurrentDeviceNames = GetDeviceNames();
+            setupConfig.OnSetupLogout += Logout;
         }
 
         public static void Logout()
@@ -135,18 +116,8 @@ namespace Particle.Tinker
             devices = null;
             deviceNames = null;
             devicesPinActions = null;
-            ParticleCloud.SharedCloud.Logout();
 
-            RemoveLocalSetting("AccessToken");
-            RemoveLocalSetting("Username");
             RemoveLocalSetting("DevicePinActions");
-
-            applcationFrame.Navigate(typeof(LoginPage));
-        }
-
-        public static void SetApplcationFrame(Frame frame)
-        {
-            applcationFrame = frame;
         }
 
         public static void SetDevicePinAction(string deviceId, string tinkerId, PinAction pinAction)
