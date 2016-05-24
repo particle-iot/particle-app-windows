@@ -65,6 +65,7 @@
   <ItemGroup>
     <Content Include="$(MSBuildThisFileDirectory)Assets\BackgroundTrianglify.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\DeviceShadow.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\FamilyPortrait.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Icons\IconBackArrow.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Icons\IconEdit.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Icons\IconMore.png" />

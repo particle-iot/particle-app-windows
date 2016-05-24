@@ -34,16 +34,7 @@
                 <RowDefinition Height=".06*" />
             </Grid.RowDefinitions>
             <Image Grid.Row="1" Source="/Assets/Logos/LogoParticleVertical.png" />
-            <Grid Grid.Row="3">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width=".3*" />
-                    <ColumnDefinition Width=".4*" />
-                    <ColumnDefinition Width=".3*" />
-                </Grid.ColumnDefinitions>
-                <Image Grid.Column="0" VerticalAlignment="Bottom" Source="/Assets/Prototypes/PrototypeParticlePhoton.png" />
-                <Image Grid.Column="1" VerticalAlignment="Bottom" Source="/Assets/Prototypes/PrototypeParticleElectron.png" />
-                <Image Grid.Column="2" VerticalAlignment="Bottom" Source="/Assets/Prototypes/PrototypeParticleCore.png" />
-            </Grid>
+            <Image Grid.Row="3" Source="/Assets/FamilyPortrait.png" />
             <Grid Grid.Row="5">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width=".12*" />
