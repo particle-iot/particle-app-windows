@@ -2,6 +2,7 @@
 using Particle.SDK;
 using Particle.Setup;
 using Particle.Tinker.Pages;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using Windows.Storage;
@@ -108,6 +109,8 @@ namespace Particle.Tinker
             setupConfig.AppFrame = frame;
             setupConfig.CompletionPageType = typeof(DevicesPage);
             setupConfig.OnSetupLogout += Logout;
+            setupConfig.PageBackgroundImage = new Windows.UI.Xaml.Media.Imaging.BitmapImage(new Uri($"ms-appx:///Assets/BackgroundTrianglify.png"));
+            setupConfig.BrandImageBackgroundColor = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Color.FromArgb(0x46, 0, 0, 0));
         }
 
         public static void Logout()

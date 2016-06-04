@@ -200,8 +200,6 @@ namespace Particle.Tinker.Pages
             UI.WindowsRuntimeResourceManager.InjectIntoResxGeneratedApplicationResourcesClass(typeof(Particle.Setup.SetupResources));
 
             SetupConfig setupConfig = TinkerData.SetupConfig;
-            setupConfig.AppFrame = Frame;
-            setupConfig.CompletionPageType = GetType();
             setupConfig.CurrentDeviceNames = TinkerData.GetDeviceNames();
             setupConfig.OnSetupExit += SetupConfig_OnSoftAPExit;
 
