@@ -112,6 +112,7 @@ namespace Particle.Tinker
             setupConfig.OnSetupLogout += Logout;
             setupConfig.PageBackgroundImage = new Windows.UI.Xaml.Media.Imaging.BitmapImage(new Uri($"ms-appx:///Assets/BackgroundTrianglify.png"));
             setupConfig.BrandImageBackgroundColor = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Color.FromArgb(0x46, 0, 0, 0));
+            setupConfig.ElementThemeColor = new Windows.UI.Xaml.Media.SolidColorBrush(Windows.UI.Color.FromArgb(0xff, 0, 0xBA, 0xEC));
         }
 
         public static void Logout()
