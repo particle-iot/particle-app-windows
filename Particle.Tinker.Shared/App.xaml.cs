@@ -67,7 +67,7 @@ namespace Particle.Tinker
                 if (!string.IsNullOrWhiteSpace(accessToken))
                 {
                     ParticleCloud.SharedCloud.SetAuthentication(accessToken);
-                    ParticleSetup.Start(TinkerData.SetupConfig, true);
+                    ParticleSetup.Start(TinkerData.SetupConfig, authenticationOnly: true);
                 }
                 else
                 {

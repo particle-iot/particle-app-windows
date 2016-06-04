@@ -212,11 +212,14 @@ namespace Particle.Tinker.Pages
             Windows.Phone.UI.Input.HardwareButtons.BackPressed += hardwareButtonsBackPressed;
 #endif
 
-            ParticleSetup.Start(setupConfig);
+            ParticleSetup.Start(setupConfig, setupOnly: true);
         }
 
         private async Task LoadDevicesAsync()
         {
+            if (ParticleSetup.AccessToken == null)
+                return;
+
             LoadDevicesProgress.IsActive = true;
             DeviceListBox.DataContext = null;
 

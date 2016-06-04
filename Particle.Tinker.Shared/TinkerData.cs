@@ -107,6 +107,7 @@ namespace Particle.Tinker
         {
             setupConfig = new SetupConfig();
             setupConfig.AppFrame = frame;
+            setupConfig.CanSkipAuthentication = true;
             setupConfig.CompletionPageType = typeof(DevicesPage);
             setupConfig.OnSetupLogout += Logout;
             setupConfig.PageBackgroundImage = new Windows.UI.Xaml.Media.Imaging.BitmapImage(new Uri($"ms-appx:///Assets/BackgroundTrianglify.png"));
