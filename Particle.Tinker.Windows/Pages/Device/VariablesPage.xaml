@@ -61,11 +61,11 @@
                     <TextBlock x:Uid="VariableVariable" FontSize="16" Text="[Variable:]" />
                     <Grid>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width=".63*" />
+                            <ColumnDefinition Width=".60*" />
                             <ColumnDefinition Width=".04*" />
-                            <ColumnDefinition Width=".23*" />
+                            <ColumnDefinition Width=".26*" />
                         </Grid.ColumnDefinitions>
-                        <ComboBox x:Name="VariablesComboBox" SelectionChanged="VariablesComboBox_SelectionChanged" ItemsSource="{Binding Variables}">
+                        <ComboBox x:Name="VariablesComboBox" VerticalAlignment="Center" SelectionChanged="VariablesComboBox_SelectionChanged" ItemsSource="{Binding Variables}">
                             <ComboBox.ItemContainerStyle>
                                 <Style TargetType="ComboBoxItem">
                                     <Setter Property="HorizontalContentAlignment" Value="Stretch"></Setter>
@@ -84,7 +84,7 @@
                                 </DataTemplate>
                             </ComboBox.ItemTemplate>
                         </ComboBox>
-                        <Button x:Name="RefreshButton" x:Uid="ButtonRefresh" Grid.Column="2" MinWidth="0" HorizontalAlignment="Stretch" BorderThickness="0" Background="{StaticResource ButtonBlue}" Content="[REFRESH]" Click="RefreshButton_Click" />
+                        <Button x:Name="RefreshButton" x:Uid="ButtonRefresh" Grid.Column="2" MinWidth="0" Content="[REFRESH]" Click="RefreshButton_Click" />
                     </Grid>
                     <ProgressBar x:Name="Progress" Background="Transparent" />
                     <TextBlock x:Uid="FunctionResult" Padding="0,10,0,0" FontSize="16" Text="[Result:]" />

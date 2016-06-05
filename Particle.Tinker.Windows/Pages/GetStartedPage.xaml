@@ -41,7 +41,7 @@
                     <ColumnDefinition Width=".78*" />
                     <ColumnDefinition Width=".12*" />
                 </Grid.ColumnDefinitions>
-                <Button x:Uid="ButtonGetStarted" Grid.Column="1" HorizontalAlignment="Stretch" BorderThickness="0" Background="{StaticResource ButtonBlue}" Content="[GET STARTED]" Click="GetStartedButton_Click" />
+                <Button x:Uid="ButtonGetStarted" Grid.Column="1" HorizontalAlignment="Stretch" Content="[GET STARTED]" Click="GetStartedButton_Click" />
             </Grid>
             <StackPanel Grid.Row="7" Orientation="Horizontal" HorizontalAlignment="Right">
                 <TextBlock x:Name="VersionTextBlock" Style="{StaticResource BaseTextBlockStyle}" Text="[v0.0.0.0]" />

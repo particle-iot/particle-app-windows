@@ -42,7 +42,7 @@
                             <ColumnDefinition Width=".78*" />
                             <ColumnDefinition Width=".12*" />
                         </Grid.ColumnDefinitions>
-                        <Button x:Uid="ButtonOk" Grid.Column="1" HorizontalAlignment="Stretch" BorderThickness="0" Background="{StaticResource ButtonBlue}" Content="[OK]" Click="OkayButton_Click" />
+                        <Button x:Uid="ButtonOk" Grid.Column="1" HorizontalAlignment="Stretch" Content="[OK]" Click="OkayButton_Click" />
                     </Grid>
                 </StackPanel>
             </ScrollViewer>

@@ -2,7 +2,6 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
-    <SolidColorBrush x:Key="ButtonBlue">#00BAEC</SolidColorBrush>
     <SolidColorBrush x:Key="HeaderTransparency">#46000000</SolidColorBrush>
     <SolidColorBrush x:Key="SliderBackground">#5B5B5B</SolidColorBrush>
     <SolidColorBrush x:Key="ErrorRed">#FF0030</SolidColorBrush>

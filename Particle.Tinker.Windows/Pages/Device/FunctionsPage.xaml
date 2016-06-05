@@ -62,12 +62,12 @@
                     <TextBlock x:Uid="FunctionArgument" Padding="0,10,0,0" FontSize="16" Text="[Argument:]" />
                     <Grid>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width=".63*" />
+                            <ColumnDefinition Width=".60*" />
                             <ColumnDefinition Width=".04*" />
-                            <ColumnDefinition Width=".23*" />
+                            <ColumnDefinition Width=".26*" />
                         </Grid.ColumnDefinitions>
-                        <TextBox x:Name="ArgumentsTextBox" Grid.Column="0" />
-                        <Button x:Name="CallButton" x:Uid="ButtonCall" Grid.Column="2" MinWidth="0" HorizontalAlignment="Stretch" BorderThickness="0" Background="{StaticResource ButtonBlue}" Content="[CALL]" Click="CallButton_Click" />
+                        <TextBox x:Name="ArgumentsTextBox" Grid.Column="0" VerticalAlignment="Center" />
+                        <Button x:Name="CallButton" x:Uid="ButtonCall" Grid.Column="2" MinWidth="0" HorizontalAlignment="Stretch" Content="[CALL]" Click="CallButton_Click" />
                     </Grid>
                     <ProgressBar x:Name="Progress" Background="Transparent" />
                     <TextBlock x:Uid="FunctionResult" Padding="0,10,0,0" FontSize="16" Text="[Result:]" />
